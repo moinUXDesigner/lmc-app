@@ -1,0 +1,2143 @@
+@font-face {
+    font-family: devIco;
+    src: url("./fonts/DevIco.a48ccad56b26e24d.woff") format("woff");
+}
+
+.gits-icon {
+    align-self: center;
+    display: inline-flex;
+    font-family: devIco;
+    -webkit-font-smoothing: antialiased;
+    font-size: 24px;
+    line-height: 16px;
+    font-style: normal;
+    margin: 30px
+}
+
+.gits-Icon-Insights:before {
+    content: "\e3af"
+}
+
+.gits-Icon-GlobalNavButton:before {
+    content: "\e700"
+}
+
+.gits-Icon-Airplane:before {
+    content: "\e709"
+}
+
+.gits-Icon-ChevronDown:before {
+    content: "\e70d"
+}
+
+.gits-Icon-ChevronUp:before {
+    content: "\e70e"
+}
+
+.gits-Icon-Edit:before {
+    content: "\e70f"
+}
+
+.gits-Icon-Add:before {
+    content: "\e710"
+}
+
+.gits-Icon-Cancel:before {
+    content: "\e711"
+}
+
+.gits-Icon-More:before {
+    content: "\e712"
+}
+
+.gits-Icon-Settings:before {
+    content: "\e713"
+}
+
+.gits-Icon-Video:before {
+    content: "\e714"
+}
+
+.gits-Icon-Mail:before {
+    content: "\e715"
+}
+
+.gits-Icon-People:before {
+    content: "\e716"
+}
+
+.gits-Icon-Phone:before {
+    content: "\e717"
+}
+
+.gits-Icon-Pin:before {
+    content: "\e718"
+}
+
+.gits-Icon-Shop:before {
+    content: "\e719"
+}
+
+.gits-Icon-Link:before {
+    content: "\e71b"
+}
+
+.gits-Icon-Filter:before {
+    content: "\e71c"
+}
+
+.gits-Icon-Zoom:before {
+    content: "\e71e"
+}
+
+.gits-Icon-ZoomOut:before {
+    content: "\e71f"
+}
+
+.gits-Icon-Search:before {
+    content: "\e721"
+}
+
+.gits-Icon-Attach:before {
+    content: "\e723"
+}
+
+.gits-Icon-Send:before {
+    content: "\e724"
+}
+
+.gits-Icon-FavoriteList:before {
+    content: "\e728"
+}
+
+.gits-Icon-Forward:before {
+    content: "\e72a"
+}
+
+.gits-Icon-Back:before {
+    content: "\e72b"
+}
+
+.gits-Icon-Refresh:before {
+    content: "\e72c"
+}
+
+.gits-Icon-Share:before {
+    content: "\e72d"
+}
+
+.gits-Icon-Lock:before {
+    content: "\e72e"
+}
+
+.gits-Icon-BlockedSite:before {
+    content: "\e72f"
+}
+
+.gits-Icon-ReportHacked:before {
+    content: "\e730"
+}
+
+.gits-Icon-EMI:before {
+    content: "\e731"
+}
+
+.gits-Icon-Blocked:before {
+    content: "\e733"
+}
+
+.gits-Icon-FavoriteStar:before {
+    content: "\e734"
+}
+
+.gits-Icon-FavoriteStarFill:before {
+    content: "\e735"
+}
+
+.gits-Icon-ReadingMode:before {
+    content: "\e736"
+}
+
+.gits-Icon-Remove:before {
+    content: "\e738"
+}
+
+.gits-Icon-CheckboxComposite:before {
+    content: "\e73a"
+}
+
+.gits-Icon-CheckboxCompositeReversed:before {
+    content: "\e73d"
+}
+
+.gits-Icon-CheckMark:before {
+    content: "\e73e"
+}
+
+.gits-Icon-BackToWindow:before {
+    content: "\e73f"
+}
+
+.gits-Icon-FullScreen:before {
+    content: "\e740"
+}
+
+.gits-Icon-Print:before {
+    content: "\e749"
+}
+
+.gits-Icon-Up:before {
+    content: "\e74a"
+}
+
+.gits-Icon-Down:before {
+    content: "\e74b"
+}
+
+.gits-Icon-OEM:before {
+    content: "\e74c"
+}
+
+.gits-Icon-Delete:before {
+    content: "\e74d"
+}
+
+.gits-Icon-Save:before {
+    content: "\e74e"
+}
+
+.gits-Icon-Flashlight:before {
+    content: "\e754"
+}
+
+.gits-Icon-Sad:before {
+    content: "\e757"
+}
+
+.gits-Icon-MultiSelect:before {
+    content: "\e762"
+}
+
+.gits-Icon-KeyboardClassic:before {
+    content: "\e765"
+}
+
+.gits-Icon-Play:before {
+    content: "\e768"
+}
+
+.gits-Icon-Pause:before {
+    content: "\e769"
+}
+
+.gits-Icon-ChevronLeft:before {
+    content: "\e76b"
+}
+
+.gits-Icon-ChevronRight:before {
+    content: "\e76c"
+}
+
+.gits-Icon-Emoji2:before {
+    content: "\e76e"
+}
+
+.gits-Icon-SearchAndApps:before {
+    content: "\e773"
+}
+
+.gits-Icon-Globe:before {
+    content: "\e774"
+}
+
+.gits-Icon-ContactInfo:before {
+    content: "\e779"
+}
+
+.gits-Icon-Unpin:before {
+    content: "\e77a"
+}
+
+.gits-Icon-Contact:before {
+    content: "\e77b"
+}
+
+.gits-Icon-Paste:before {
+    content: "\e77f"
+}
+
+.gits-Icon-WindowsLogo:before {
+    content: "\e782"
+}
+
+.gits-Icon-Error:before {
+    content: "\e783"
+}
+
+.gits-Icon-Unlock:before {
+    content: "\e785"
+}
+
+.gits-Icon-Calendar:before {
+    content: "\e787"
+}
+
+.gits-Icon-Megaphone:before {
+    content: "\e789"
+}
+
+.gits-Icon-Color:before {
+    content: "\e790"
+}
+
+.gits-Icon-SaveAs:before {
+    content: "\e792"
+}
+
+.gits-Icon-Undo:before {
+    content: "\e7a7"
+}
+
+.gits-Icon-RedEye:before {
+    content: "\e7b3"
+}
+
+.gits-Icon-Package:before {
+    content: "\e7b8"
+}
+
+.gits-Icon-Warning:before {
+    content: "\e7ba"
+}
+
+.gits-Icon-ShoppingCart:before {
+    content: "\e7bf"
+}
+
+.gits-Icon-Flag:before {
+    content: "\e7c1"
+}
+
+.gits-Icon-Page:before {
+    content: "\e7c3"
+}
+
+.gits-Icon-Car:before {
+    content: "\e804"
+}
+
+.gits-Icon-EatDrink:before {
+    content: "\e807"
+}
+
+.gits-Icon-Home:before {
+    content: "\e80f"
+}
+
+.gits-Icon-SwitcherStartEnd:before {
+    content: "\e810"
+}
+
+.gits-Icon-IncidentTriangle:before {
+    content: "\e814"
+}
+
+.gits-Icon-History:before {
+    content: "\e81c"
+}
+
+.gits-Icon-Work:before {
+    content: "\e821"
+}
+
+.gits-Icon-Recent:before {
+    content: "\e823"
+}
+
+.gits-Icon-LocationDot:before {
+    content: "\e827"
+}
+
+.gits-Icon-Dictionary:before {
+    content: "\e82d"
+}
+
+.gits-Icon-Pinned:before {
+    content: "\e840"
+}
+
+.gits-Icon-RevToggleKey:before {
+    content: "\e845"
+}
+
+.gits-Icon-View:before {
+    content: "\e890"
+}
+
+.gits-Icon-Previous:before {
+    content: "\e892"
+}
+
+.gits-Icon-Next:before {
+    content: "\e893"
+}
+
+.gits-Icon-Clear:before {
+    content: "\e894"
+}
+
+.gits-Icon-Download:before {
+    content: "\e896"
+}
+
+.gits-Icon-Help:before {
+    content: "\e897"
+}
+
+.gits-Icon-Upload:before {
+    content: "\e898"
+}
+
+.gits-Icon-Emoji:before {
+    content: "\e899"
+}
+
+.gits-Icon-ClosePane:before {
+    content: "\e89f"
+}
+
+.gits-Icon-OpenPane:before {
+    content: "\e8a0"
+}
+
+.gits-Icon-ZoomIn:before {
+    content: "\e8a3"
+}
+
+.gits-Icon-ViewAll:before {
+    content: "\e8a9"
+}
+
+.gits-Icon-Switch:before {
+    content: "\e8ab"
+}
+
+.gits-Icon-Rename:before {
+    content: "\e8ac"
+}
+
+.gits-Icon-Import:before {
+    content: "\e8b5"
+}
+
+.gits-Icon-Folder:before {
+    content: "\e8b7"
+}
+
+.gits-Icon-ChromeClose:before {
+    content: "\e8bb"
+}
+
+.gits-Icon-ShowResults:before {
+    content: "\e8bc"
+}
+
+.gits-Icon-PaymentCard:before {
+    content: "\e8c7"
+}
+
+.gits-Icon-Copy:before {
+    content: "\e8c8"
+}
+
+.gits-Icon-FontColor:before {
+    content: "\e8d3"
+}
+
+.gits-Icon-Permissions:before {
+    content: "\e8d7"
+}
+
+.gits-Icon-Italic:before {
+    content: "\e8db"
+}
+
+.gits-Icon-Underline:before {
+    content: "\e8dc"
+}
+
+.gits-Icon-Bold:before {
+    content: "\e8dd"
+}
+
+.gits-Icon-Like:before {
+    content: "\e8e1"
+}
+
+.gits-Icon-FontSize:before {
+    content: "\e8e9"
+}
+
+.gits-Icon-Tag:before {
+    content: "\e8ec"
+}
+
+.gits-Icon-Library:before {
+    content: "\e8f1"
+}
+
+.gits-Icon-BlockContact:before {
+    content: "\e8f8"
+}
+
+.gits-Icon-AddFriend:before {
+    content: "\e8fa"
+}
+
+.gits-Icon-Accept:before {
+    content: "\e8fb"
+}
+
+.gits-Icon-BulletedList:before {
+    content: "\e8fd"
+}
+
+.gits-Icon-Preview:before {
+    content: "\e8ff"
+}
+
+.gits-Icon-Chat:before {
+    content: "\e901"
+}
+
+.gits-Icon-Group:before {
+    content: "\e902"
+}
+
+.gits-Icon-World:before {
+    content: "\e909"
+}
+
+.gits-Icon-Comment:before {
+    content: "\e90a"
+}
+
+.gits-Icon-Repair:before {
+    content: "\e90f"
+}
+
+.gits-Icon-Accounts:before {
+    content: "\e910"
+}
+
+.gits-Icon-Stopwatch:before {
+    content: "\e916"
+}
+
+.gits-Icon-Clock:before {
+    content: "\e917"
+}
+
+.gits-Icon-WorldClock:before {
+    content: "\e918"
+}
+
+.gits-Icon-Completed:before {
+    content: "\e930"
+}
+
+.gits-Icon-MiniExpand:before {
+    content: "\e93a"
+}
+
+.gits-Icon-Code:before {
+    content: "\e943"
+}
+
+.gits-Icon-Streaming:before {
+    content: "\e93e"
+}
+
+.gits-Icon-LightningBolt:before {
+    content: "\e945"
+}
+
+.gits-Icon-Info:before {
+    content: "\e946"
+}
+
+.gits-Icon-CalculatorAddition:before {
+    content: "\e948"
+}
+
+.gits-Icon-MediaStorageTower:before {
+    content: "\e965"
+}
+
+.gits-Icon-ChevronUpSmall:before {
+    content: "\e96d"
+}
+
+.gits-Icon-ChevronDownSmall:before {
+    content: "\e96e"
+}
+
+.gits-Icon-ChevronLeftSmall:before {
+    content: "\e96f"
+}
+
+.gits-Icon-ChevronRightSmall:before {
+    content: "\e970"
+}
+
+.gits-Icon-ChevronUpMed:before {
+    content: "\e971"
+}
+
+.gits-Icon-ChevronDownMed:before {
+    content: "\e972"
+}
+
+.gits-Icon-ChevronLeftMed:before {
+    content: "\e973"
+}
+
+.gits-Icon-ChevronRightMed:before {
+    content: "\e974"
+}
+
+.gits-Icon-PC1:before {
+    content: "\e977"
+}
+
+.gits-Icon-Reply:before {
+    content: "\e97a"
+}
+
+.gits-Icon-Chart:before {
+    content: "\e999"
+}
+
+.gits-Icon-LockSolid:before {
+    content: "\e9a2"
+}
+
+.gits-Icon-DashKey:before {
+    content: "\e9ae"
+}
+
+.gits-Icon-CloudWeather:before {
+    content: "\e9be"
+}
+
+.gits-Icon-Cloudy:before {
+    content: "\e9bf"
+}
+
+.gits-Icon-Unknown:before {
+    content: "\e9ce"
+}
+
+.gits-Icon-SortLines:before {
+    content: "\e9d0"
+}
+
+.gits-Icon-Ribbon:before {
+    content: "\e9d1"
+}
+
+.gits-Icon-Assign:before {
+    content: "\e9d3"
+}
+
+.gits-Icon-FlowChart:before {
+    content: "\e9d4"
+}
+
+.gits-Icon-CheckList:before {
+    content: "\e9d5"
+}
+
+.gits-Icon-Diagnostic:before {
+    content: "\e9d9"
+}
+
+.gits-Icon-Equalizer:before {
+    content: "\e9e9"
+}
+
+.gits-Icon-Processing:before {
+    content: "\e9f5"
+}
+
+.gits-Icon-WorkFlow:before {
+    content: "\ea01"
+}
+
+.gits-Icon-Diamond2Solid:before {
+    content: "\ea0a"
+}
+
+.gits-Icon-Teamwork:before {
+    content: "\ea12"
+}
+
+.gits-Icon-PeopleAdd:before {
+    content: "\ea15"
+}
+
+.gits-Icon-DateTime2:before {
+    content: "\ea17"
+}
+
+.gits-Icon-Shield:before {
+    content: "\ea18"
+}
+
+.gits-Icon-PageAdd:before {
+    content: "\ea1a"
+}
+
+.gits-Icon-NumberedList:before {
+    content: "\ea1c"
+}
+
+.gits-Icon-PowerBILogo:before {
+    content: "\ea1e"
+}
+
+.gits-Icon-MusicInCollectionFill:before {
+    content: "\ea36"
+}
+
+.gits-Icon-List:before {
+    content: "\ea37"
+}
+
+.gits-Icon-ErrorBadge:before {
+    content: "\ea39"
+}
+
+.gits-Icon-CircleRing:before {
+    content: "\ea3a"
+}
+
+.gits-Icon-CircleFill:before {
+    content: "\ea3b"
+}
+
+.gits-Icon-Lightbulb:before {
+    content: "\ea80"
+}
+
+.gits-Icon-Puzzle:before {
+    content: "\ea86"
+}
+
+.gits-Icon-Ringer:before {
+    content: "\ea8f"
+}
+
+.gits-Icon-PDF:before {
+    content: "\ea90"
+}
+
+.gits-Icon-CirclePlus:before {
+    content: "\eaee"
+}
+
+.gits-Icon-StockDown:before {
+    content: "\eb0f"
+}
+
+.gits-Icon-StockUp:before {
+    content: "\eb11"
+}
+
+.gits-Icon-MSNVideos:before {
+    content: "\eb1c"
+}
+
+.gits-Icon-Soccer:before {
+    content: "\eb21"
+}
+
+.gits-Icon-CollegeFootball:before {
+    content: "\eb26"
+}
+
+.gits-Icon-ProFootball:before {
+    content: "\eb27"
+}
+
+.gits-Icon-Snowflake:before {
+    content: "\eb46"
+}
+
+.gits-Icon-AirplaneSolid:before {
+    content: "\eb4c"
+}
+
+.gits-Icon-Heart:before {
+    content: "\eb51"
+}
+
+.gits-Icon-HeartFill:before {
+    content: "\eb52"
+}
+
+.gits-Icon-AzureLogo:before {
+    content: "\eb6a"
+}
+
+.gits-Icon-OfficeLogo:before {
+    content: "\eb6e"
+}
+
+.gits-Icon-SkypeLogo:before {
+    content: "\eb6f"
+}
+
+.gits-Icon-StatusErrorFull:before {
+    content: "\eb90"
+}
+
+.gits-Icon-Certificate:before {
+    content: "\eb95"
+}
+
+.gits-Icon-Rewind:before {
+    content: "\eb9e"
+}
+
+.gits-Icon-Photo2:before {
+    content: "\eb9f"
+}
+
+.gits-Icon-OpenSource:before {
+    content: "\ebc2"
+}
+
+.gits-Icon-Project:before {
+    content: "\ebc6"
+}
+
+.gits-Icon-CloudDownload:before {
+    content: "\ebd3"
+}
+
+.gits-Icon-CityNext:before {
+    content: "\ec06"
+}
+
+.gits-Icon-Documentation:before {
+    content: "\ec17"
+}
+
+.gits-Icon-Giftbox:before {
+    content: "\ec1f"
+}
+
+.gits-Icon-VisualStudioLogo:before {
+    content: "\ec22"
+}
+
+.gits-Icon-CompletedSolid:before {
+    content: "\ec61"
+}
+
+.gits-Icon-MicrosoftLogo:before {
+    content: "\ec6a"
+}
+
+.gits-Icon-CloudUpload:before {
+    content: "\ec8e"
+}
+
+.gits-Icon-ScrollUpDown:before {
+    content: "\ec8f"
+}
+
+.gits-Icon-Tiles:before {
+    content: "\eca5"
+}
+
+.gits-Icon-Org:before {
+    content: "\eca6"
+}
+
+.gits-Icon-AppIconDefault:before {
+    content: "\ecaa"
+}
+
+.gits-Icon-POI:before {
+    content: "\ecaf"
+}
+
+.gits-Icon-AddTo:before {
+    content: "\ecc8"
+}
+
+.gits-Icon-RadioBtnOff:before {
+    content: "\ecca"
+}
+
+.gits-Icon-RadioBtnOn:before {
+    content: "\eccb"
+}
+
+.gits-Icon-ExploreContent:before {
+    content: "\eccd"
+}
+
+.gits-Icon-Embed:before {
+    content: "\ecce"
+}
+
+.gits-Icon-Product:before {
+    content: "\ecdc"
+}
+
+.gits-Icon-ProgressLoopOuter:before {
+    content: "\ecdf"
+}
+
+.gits-Icon-Blocked2:before {
+    content: "\ece4"
+}
+
+.gits-Icon-FangBody:before {
+    content: "\eceb"
+}
+
+.gits-Icon-ChatInviteFriend:before {
+    content: "\ecfe"
+}
+
+.gits-Icon-Feedback:before {
+    content: "\ed15"
+}
+
+.gits-Icon-YammerLogo:before {
+    content: "\ed19"
+}
+
+.gits-Icon-AADLogo:before {
+    content: "\ed68"
+}
+
+.gits-Icon-AccessLogo:before {
+    content: "\ed69"
+}
+
+.gits-Icon-SecurityGroup:before {
+    content: "\ed85"
+}
+
+.gits-Icon-Table:before {
+    content: "\ed86"
+}
+
+.gits-Icon-Waffle:before {
+    content: "\ed89"
+}
+
+.gits-Icon-RemoveLink:before {
+    content: "\ed90"
+}
+
+.gits-Icon-EditNote:before {
+    content: "\ed9d"
+}
+
+.gits-Icon-DoubleChevronUp:before {
+    content: "\edbd"
+}
+
+.gits-Icon-DoubleChevronLeft:before {
+    content: "\edbe"
+}
+
+.gits-Icon-DoubleChevronRight:before {
+    content: "\edbf"
+}
+
+.gits-Icon-Ascending:before {
+    content: "\edc0"
+}
+
+.gits-Icon-Descending:before {
+    content: "\edc1"
+}
+
+.gits-Icon-TextField:before {
+    content: "\edc3"
+}
+
+.gits-Icon-Dynamics365Logo:before {
+    content: "\edcc"
+}
+
+.gits-Icon-ClearFormatting:before {
+    content: "\eddd"
+}
+
+.gits-Icon-Strikethrough:before {
+    content: "\ede0"
+}
+
+.gits-Icon-Export:before {
+    content: "\ede1"
+}
+
+.gits-Icon-ExportMirrored:before {
+    content: "\ede2"
+}
+
+.gits-Icon-DoubleChevronDown:before {
+    content: "\ee04"
+}
+
+.gits-Icon-ReplyMirrored:before {
+    content: "\ee35"
+}
+
+.gits-Icon-AddGroup:before {
+    content: "\ee3d"
+}
+
+.gits-Icon-SortUp:before {
+    content: "\ee68"
+}
+
+.gits-Icon-SortDown:before {
+    content: "\ee69"
+}
+
+.gits-Icon-AwayStatus:before {
+    content: "\ee6a"
+}
+
+.gits-Icon-MyMoviesTV:before {
+    content: "\ee6c"
+}
+
+.gits-Icon-CPU:before {
+    content: "\eea1"
+}
+
+.gits-Icon-ContactCard:before {
+    content: "\eebd"
+}
+
+.gits-Icon-CustomList:before {
+    content: "\eebe"
+}
+
+.gits-Icon-OfflineOneDriveParachute:before {
+    content: "\eec8"
+}
+
+.gits-Icon-OfflineOneDriveParachuteDisabled:before {
+    content: "\eec9"
+}
+
+.gits-Icon-TriangleSolidUp12:before {
+    content: "\eecc"
+}
+
+.gits-Icon-TriangleSolidDown12:before {
+    content: "\eecd"
+}
+
+.gits-Icon-TriangleSolidRight12:before {
+    content: "\eecf"
+}
+
+.gits-Icon-TriangleRight12:before {
+    content: "\eed3"
+}
+
+.gits-Icon-ArrowUpRight8:before {
+    content: "\eed4"
+}
+
+.gits-Icon-DocumentSet:before {
+    content: "\eed6"
+}
+
+.gits-Icon-ArrowDownRightMirrored8:before {
+    content: "\eef0"
+}
+
+.gits-Icon-ViewAll2:before {
+    content: "\ef56"
+}
+
+.gits-Icon-PlayerSettings:before {
+    content: "\ef58"
+}
+
+.gits-Icon-ReceiptCheck:before {
+    content: "\ef5b"
+}
+
+.gits-Icon-EditStyle:before {
+    content: "\ef60"
+}
+
+.gits-Icon-Lifesaver:before {
+    content: "\ef62"
+}
+
+.gits-Icon-DocumentSearch:before {
+    content: "\ef6c"
+}
+
+.gits-Icon-ExcelDocument:before {
+    content: "\ef73"
+}
+
+.gits-Icon-Starburst:before {
+    content: "\ef78"
+}
+
+.gits-Icon-SkypeCircleCheck:before {
+    content: "\ef7d"
+}
+
+.gits-Icon-SkypeCircleMinus:before {
+    content: "\ef7f"
+}
+
+.gits-Icon-SkypeMinus:before {
+    content: "\ef82"
+}
+
+.gits-Icon-Hide2:before {
+    content: "\ef89"
+}
+
+.gits-Icon-ClearFilter:before {
+    content: "\ef8f"
+}
+
+.gits-Icon-TimeEntry:before {
+    content: "\ef95"
+}
+
+.gits-Icon-PageEdit:before {
+    content: "\efb6"
+}
+
+.gits-Icon-PageArrowRight:before {
+    content: "\efb8"
+}
+
+.gits-Icon-Database:before {
+    content: "\efc7"
+}
+
+.gits-Icon-ConnectContacts:before {
+    content: "\efd4"
+}
+
+.gits-Icon-ActivateOrders:before {
+    content: "\efe0"
+}
+
+.gits-Icon-ZipFolder:before {
+    content: "\f012"
+}
+
+.gits-Icon-Configuration:before {
+    content: "\f01e"
+}
+
+.gits-Icon-TextDocument:before {
+    content: "\f029"
+}
+
+.gits-Icon-Script:before {
+    content: "\f03a"
+}
+
+.gits-Icon-ActivityFeed:before {
+    content: "\f056"
+}
+
+.gits-Icon-CaretSolidDown:before {
+    content: "\f08e"
+}
+
+.gits-Icon-FabricFolder:before {
+    content: "\f0a9"
+}
+
+.gits-Icon-FabricFolderFill:before {
+    content: "\f0aa"
+}
+
+.gits-Icon-FabricNewFolder:before {
+    content: "\f0ab"
+}
+
+.gits-Icon-PublishContent:before {
+    content: "\f0d4"
+}
+
+.gits-Icon-CannedChat:before {
+    content: "\f0f2"
+}
+
+.gits-Icon-SettingsApp:before {
+    content: "\f0ff"
+}
+
+.gits-Icon-FolderHorizontal:before {
+    content: "\f12b"
+}
+
+.gits-Icon-GiftboxOpen:before {
+    content: "\f133"
+}
+
+.gits-Icon-StatusCircleInner:before {
+    content: "\f137"
+}
+
+.gits-Icon-StatusCircleRing:before {
+    content: "\f138"
+}
+
+.gits-Icon-StatusCircleErrorX:before {
+    content: "\f13d"
+}
+
+.gits-Icon-StatusCircleCheckmark:before {
+    content: "\f13e"
+}
+
+.gits-Icon-InfoSolid:before {
+    content: "\f167"
+}
+
+.gits-Icon-ProgressRingDots:before {
+    content: "\f16a"
+}
+
+.gits-Icon-WordLogo:before {
+    content: "\f1e3"
+}
+
+.gits-Icon-ExcelLogo:before {
+    content: "\f1e5"
+}
+
+.gits-Icon-OneNoteLogo:before {
+    content: "\f1e7"
+}
+
+.gits-Icon-OutlookLogo:before {
+    content: "\f1e9"
+}
+
+.gits-Icon-PowerPointLogo:before {
+    content: "\f1eb"
+}
+
+.gits-Icon-ScheduleEventAction:before {
+    content: "\f1ef"
+}
+
+.gits-Icon-FlameSolid:before {
+    content: "\f1f3"
+}
+
+.gits-Icon-ServerProcesses:before {
+    content: "\f1fe"
+}
+
+.gits-Icon-Server:before {
+    content: "\f201"
+}
+
+.gits-Icon-SaveAll:before {
+    content: "\f203"
+}
+
+.gits-Icon-TwoKeys:before {
+    content: "\f229"
+}
+
+.gits-Icon-GridViewSmall:before {
+    content: "\f232"
+}
+
+.gits-Icon-ViewDashboard:before {
+    content: "\f246"
+}
+
+.gits-Icon-ViewList:before {
+    content: "\f247"
+}
+
+.gits-Icon-ViewListGroup:before {
+    content: "\f248"
+}
+
+.gits-Icon-ViewListTree:before {
+    content: "\f249"
+}
+
+.gits-Icon-TriggerAuto:before {
+    content: "\f24a"
+}
+
+.gits-Icon-TriggerUser:before {
+    content: "\f24b"
+}
+
+.gits-Icon-StackedBarChart:before {
+    content: "\f24d"
+}
+
+.gits-Icon-StackedLineChart:before {
+    content: "\f24e"
+}
+
+.gits-Icon-BuildQueue:before {
+    content: "\f24f"
+}
+
+.gits-Icon-BuildQueueNew:before {
+    content: "\f250"
+}
+
+.gits-Icon-UserFollowed:before {
+    content: "\f25c"
+}
+
+.gits-Icon-Clicked:before {
+    content: "\f268"
+}
+
+.gits-Icon-Signin:before {
+    content: "\f286"
+}
+
+.gits-Icon-CloneToDesktop:before {
+    content: "\f28c"
+}
+
+.gits-Icon-Build:before {
+    content: "\f28f"
+}
+
+.gits-Icon-BranchFork2:before {
+    content: "\f291"
+}
+
+.gits-Icon-BranchCommit:before {
+    content: "\f293"
+}
+
+.gits-Icon-BranchMerge:before {
+    content: "\f295"
+}
+
+.gits-Icon-BranchPullRequest:before {
+    content: "\f296"
+}
+
+.gits-Icon-BranchShelveset:before {
+    content: "\f298"
+}
+
+.gits-Icon-RawSource:before {
+    content: "\f299"
+}
+
+.gits-Icon-RowsGroup:before {
+    content: "\f29b"
+}
+
+.gits-Icon-Deploy:before {
+    content: "\f29d"
+}
+
+.gits-Icon-ServerEnviroment:before {
+    content: "\f29f"
+}
+
+.gits-Icon-VisioLogo:before {
+    content: "\f2a7"
+}
+
+.gits-Icon-Backlog:before {
+    content: "\f2ac"
+}
+
+.gits-Icon-TeamFavorite:before {
+    content: "\f2ad"
+}
+
+.gits-Icon-TaskGroup:before {
+    content: "\f2ae"
+}
+
+.gits-Icon-CommentAdd:before {
+    content: "\f2b3"
+}
+
+.gits-Icon-ShopServer:before {
+    content: "\f2b6"
+}
+
+.gits-Icon-QueryList:before {
+    content: "\f2b8"
+}
+
+.gits-Icon-StreamingOff:before {
+    content: "\f2bb"
+}
+
+.gits-Icon-MoreVertical:before {
+    content: "\f2bc"
+}
+
+.gits-Icon-ArrowTallUpRight:before {
+    content: "\f2be"
+}
+
+.gits-Icon-RingerOff:before {
+    content: "\f2c5"
+}
+
+.gits-Icon-PlayResume:before {
+    content: "\f2c6"
+}
+
+.gits-Icon-Repo:before {
+    content: "\f2cb"
+}
+
+.gits-Icon-FolderQuery:before {
+    content: "\f2cd"
+}
+
+.gits-Icon-FolderList:before {
+    content: "\f2ce"
+}
+
+.gits-Icon-CirclePauseSolid:before {
+    content: "\f2d8"
+}
+
+.gits-Icon-CirclePause:before {
+    content: "\f2d9"
+}
+
+.gits-Icon-MSNVideosSolid:before {
+    content: "\f2da"
+}
+
+.gits-Icon-CircleStopSolid:before {
+    content: "\f2db"
+}
+
+.gits-Icon-CircleStop:before {
+    content: "\f2dc"
+}
+
+.gits-Icon-NavigateForward:before {
+    content: "\f2df"
+}
+
+.gits-Icon-FileTemplate:before {
+    content: "\f2e6"
+}
+
+.gits-Icon-FileJAVA:before {
+    content: "\f2e8"
+}
+
+.gits-Icon-FileCSS:before {
+    content: "\f2ea"
+}
+
+.gits-Icon-FileHTML:before {
+    content: "\f2ed"
+}
+
+.gits-Icon-JavaScriptLanguage:before {
+    content: "\f2ee"
+}
+
+.gits-Icon-TypeScriptLanguage:before {
+    content: "\f2f7"
+}
+
+.gits-Icon-MarkDownLanguage:before {
+    content: "\f2fb"
+}
+
+.gits-Icon-PlugConnected:before {
+    content: "\f302"
+}
+
+.gits-Icon-PlugDisconnected:before {
+    content: "\f303"
+}
+
+.gits-Icon-UnlockSolid:before {
+    content: "\f304"
+}
+
+.gits-Icon-Variable:before {
+    content: "\f305"
+}
+
+.gits-Icon-FileBug:before {
+    content: "\f30d"
+}
+
+.gits-Icon-FileCode:before {
+    content: "\f30e"
+}
+
+.gits-Icon-FileImage:before {
+    content: "\f311"
+}
+
+.gits-Icon-AutoFillTemplate:before {
+    content: "\f313"
+}
+
+.gits-Icon-WorkItem:before {
+    content: "\f314"
+}
+
+.gits-Icon-FullHistory:before {
+    content: "\f31c"
+}
+
+.gits-Icon-TripleColumnEdit:before {
+    content: "\f323"
+}
+
+.gits-Icon-AlertSolid:before {
+    content: "\f331"
+}
+
+.gits-Icon-MegaphoneSolid:before {
+    content: "\f332"
+}
+
+.gits-Icon-TaskSolid:before {
+    content: "\f333"
+}
+
+.gits-Icon-CrownSolid:before {
+    content: "\f336"
+}
+
+.gits-Icon-Trophy2Solid:before {
+    content: "\f337"
+}
+
+.gits-Icon-QuickNoteSolid:before {
+    content: "\f338"
+}
+
+.gits-Icon-ConstructionConeSolid:before {
+    content: "\f339"
+}
+
+.gits-Icon-PageListSolid:before {
+    content: "\f33a"
+}
+
+.gits-Icon-StarburstSolid:before {
+    content: "\f33c"
+}
+
+.gits-Icon-ReadingModeSolid:before {
+    content: "\f33d"
+}
+
+.gits-Icon-ShieldSolid:before {
+    content: "\f340"
+}
+
+.gits-Icon-GiftBoxSolid:before {
+    content: "\f341"
+}
+
+.gits-Icon-RibbonSolid:before {
+    content: "\f345"
+}
+
+.gits-Icon-FinancialSolid:before {
+    content: "\f346"
+}
+
+.gits-Icon-HeadsetSolid:before {
+    content: "\f348"
+}
+
+.gits-Icon-PermissionsSolid:before {
+    content: "\f349"
+}
+
+.gits-Icon-ParkingSolid:before {
+    content: "\f34a"
+}
+
+.gits-Icon-DiamondSolid:before {
+    content: "\f34c"
+}
+
+.gits-Icon-AsteriskSolid:before {
+    content: "\f34d"
+}
+
+.gits-Icon-OfflineStorageSolid:before {
+    content: "\f34e"
+}
+
+.gits-Icon-BankSolid:before {
+    content: "\f34f"
+}
+
+.gits-Icon-DecisionSolid:before {
+    content: "\f350"
+}
+
+.gits-Icon-ParachuteSolid:before {
+    content: "\f352"
+}
+
+.gits-Icon-FiltersSolid:before {
+    content: "\f353"
+}
+
+.gits-Icon-ColorSolid:before {
+    content: "\f354"
+}
+
+.gits-Icon-ReviewSolid:before {
+    content: "\f355"
+}
+
+.gits-Icon-ReviewRequestSolid:before {
+    content: "\f356"
+}
+
+.gits-Icon-ReviewResponseSolid:before {
+    content: "\f358"
+}
+
+.gits-Icon-FeedbackRequestSolid:before {
+    content: "\f359"
+}
+
+.gits-Icon-FeedbackResponseSolid:before {
+    content: "\f35b"
+}
+
+.gits-Icon-NavigateExternalInline:before {
+    content: "\f35f"
+}
+
+.gits-Icon-PlanView:before {
+    content: "\f360"
+}
+
+.gits-Icon-EngineeringGroup:before {
+    content: "\f362"
+}
+
+.gits-Icon-ProjectCollection:before {
+    content: "\f363"
+}
+
+.gits-Icon-ChevronUnfold10:before {
+    content: "\f369"
+}
+
+.gits-Icon-ChevronFold10:before {
+    content: "\f36a"
+}
+
+.gits-Icon-VSTSLogo:before {
+    content: "\f381"
+}
+
+.gits-Icon-TestBeaker:before {
+    content: "\f3a5"
+}
+
+.gits-Icon-TestBeakerSolid:before {
+    content: "\f3a6"
+}
+
+.gits-Icon-TestAutoSolid:before {
+    content: "\f3a8"
+}
+
+.gits-Icon-TestPlan:before {
+    content: "\f3ab"
+}
+
+.gits-Icon-TestStep:before {
+    content: "\f3ac"
+}
+
+.gits-Icon-TestParameter:before {
+    content: "\f3ad"
+}
+
+.gits-Icon-TestSuite:before {
+    content: "\f3ae"
+}
+
+.gits-Icon-TestCase:before {
+    content: "\f3af"
+}
+
+.gits-Icon-Sprint:before {
+    content: "\f3b0"
+}
+
+.gits-Icon-TriggerApproval:before {
+    content: "\f3b2"
+}
+
+.gits-Icon-Rocket:before {
+    content: "\f3b3"
+}
+
+.gits-Icon-AzureKeyVault:before {
+    content: "\f3b4"
+}
+
+.gits-Icon-LikeSolid:before {
+    content: "\f3bf"
+}
+
+.gits-Icon-CRMCustomerInsightsApp:before {
+    content: "\f3c8"
+}
+
+.gits-Icon-FilterSolid:before {
+    content: "\f412"
+}
+
+.gits-Icon-Inbox:before {
+    content: "\f41c"
+}
+
+.gits-Icon-NotExecuted:before {
+    content: "\f440"
+}
+
+.gits-Icon-NotImpactedSolid:before {
+    content: "\f441"
+}
+
+.gits-Icon-BacklogBoard:before {
+    content: "\f444"
+}
+
+.gits-Icon-IssueSolid:before {
+    content: "\f448"
+}
+
+.gits-Icon-DefectSolid:before {
+    content: "\f449"
+}
+
+.gits-Icon-LadybugSolid:before {
+    content: "\f44a"
+}
+
+.gits-Icon-NugetLogo:before {
+    content: "\f44c"
+}
+
+.gits-Icon-TFVCLogo:before {
+    content: "\f44d"
+}
+
+.gits-Icon-ProjectLogo32:before {
+    content: "\f47e"
+}
+
+.gits-Icon-WaffleOffice365:before {
+    content: "\f4e0"
+}
+
+.gits-Icon-FontColorA:before {
+    content: "\f4ec"
+}
+
+.gits-Icon-FontColorSwatch:before {
+    content: "\f4ed"
+}
+
+.gits-Icon-SemiboldWeight:before {
+    content: "\f4f0"
+}
+
+.gits-Icon-ChartSeries:before {
+    content: "\f513"
+}
+
+.gits-Icon-AlignJustify:before {
+    content: "\f51e"
+}
+
+.gits-Icon-BlockedSolid:before {
+    content: "\f531"
+}
+
+.gits-Icon-DownloadDocument:before {
+    content: "\f549"
+}
+
+.gits-Icon-WaitlistConfirm:before {
+    content: "\f550"
+}
+
+.gits-Icon-LaptopSecure:before {
+    content: "\f552"
+}
+
+.gits-Icon-EntryView:before {
+    content: "\f554"
+}
+
+.gits-Icon-AccountManagement:before {
+    content: "\f55c"
+}
+
+.gits-Icon-ExploreData:before {
+    content: "\f5b6"
+}
+
+.gits-Icon-BitbucketLogo32:before {
+    content: "\f5d2"
+}
+
+.gits-Icon-GradleLogo32:before {
+    content: "\f5d4"
+}
+
+.gits-Icon-PasteAsCode:before {
+    content: "\f5d6"
+}
+
+.gits-Icon-ClipboardSolid:before {
+    content: "\f5dc"
+}
+
+.gits-Icon-AnalyticsView:before {
+    content: "\f5f1"
+}
+
+.gits-Icon-Trending12:before {
+    content: "\f62d"
+}
+
+.gits-Icon-CircleShapeSolid:before {
+    content: "\f63c"
+}
+
+.gits-Icon-GitLogo:before {
+    content: "\f65d"
+}
+
+.gits-Icon-GitHubLogo:before {
+    content: "\f65e"
+}
+
+.gits-Icon-ApacheMavenLogo:before {
+    content: "\f65f"
+}
+
+.gits-Icon-NPMLogo:before {
+    content: "\f660"
+}
+
+.gits-Icon-GitFork:before {
+    content: "\f661"
+}
+
+.gits-Icon-SVNLogo:before {
+    content: "\f662"
+}
+
+.gits-Icon-JenkinsLogo:before {
+    content: "\f663"
+}
+
+.gits-Icon-ExternalGit:before {
+    content: "\f665"
+}
+
+.gits-Icon-QuadColumn:before {
+    content: "\f66f"
+}
+
+.gits-Icon-DictionaryRemove:before {
+    content: "\f69a"
+}
+
+.gits-Icon-UserRemove:before {
+    content: "\f69b"
+}
+
+.gits-Icon-OpenInNewTab:before {
+    content: "\f6ab"
+}
+
+.gits-Icon-VerifiedBrandSolid:before {
+    content: "\f6ad"
+}
+
+.gits-Icon-AuthenticatorApp:before {
+    content: "\f6b1"
+}
+
+.gits-Icon-BacklogList:before {
+    content: "\f6bf"
+}
+
+.gits-Icon-UserGauge:before {
+    content: "\f6ed"
+}
+
+.gits-Icon-PeopleSettings:before {
+    content: "\f72c"
+}
+
+.gits-Icon-Blocked2Solid:before {
+    content: "\f737"
+}
+
+.gits-Icon-BulletedListText:before {
+    content: "\f792"
+}
+
+.gits-Icon-BulletedListBullet:before {
+    content: "\f793"
+}
+
+.gits-Icon-NumberedListText:before {
+    content: "\f796"
+}
+
+.gits-Icon-NumberedListNumber:before {
+    content: "\f797"
+}
+
+.gits-Icon-RemoveLinkChain:before {
+    content: "\f79a"
+}
+
+.gits-Icon-RemoveLinkX:before {
+    content: "\f79b"
+}
+
+.gits-Icon-FabricTextHighlight:before {
+    content: "\f79c"
+}
+
+.gits-Icon-ClearFormattingA:before {
+    content: "\f79d"
+}
+
+.gits-Icon-ClearFormattingEraser:before {
+    content: "\f79e"
+}
+
+.gits-Icon-Photo2Fill:before {
+    content: "\f79f"
+}
+
+.gits-Icon-IncreaseIndentText:before {
+    content: "\f7a0"
+}
+
+.gits-Icon-IncreaseIndentArrow:before {
+    content: "\f7a1"
+}
+
+.gits-Icon-DecreaseIndentText:before {
+    content: "\f7a2"
+}
+
+.gits-Icon-DecreaseIndentArrow:before {
+    content: "\f7a3"
+}
+
+.gits-Icon-CheckListText:before {
+    content: "\f7a8"
+}
+
+.gits-Icon-CheckListCheck:before {
+    content: "\f7a9"
+}
+
+.gits-Icon-NumberSymbol:before {
+    content: "\f7ac"
+}
+
+.gits-Icon-VerifiedBrand:before {
+    content: "\f7bd"
+}
+
+.gits-Icon-ReleaseGate:before {
+    content: "\f7be"
+}
+
+.gits-Icon-ReleaseGateCheck:before {
+    content: "\f7bf"
+}
+
+.gits-Icon-ReleaseGateError:before {
+    content: "\f7c0"
+}
+
+.gits-Icon-FabricTextHighlightComposite:before {
+    content: "\f7da"
+}
+
+.gits-Icon-SkypeCircleSlash:before {
+    content: "\f825"
+}
+
+.gits-Icon-PythonLogoBlue:before {
+    content: "\f84d"
+}
+
+.gits-Icon-PythonLogoYellow:before {
+    content: "\f84e"
+}
+
+.gits-Icon-RustLanguageLogo:before {
+    content: "\f84f"
+}
+
+.gits-Icon-RubyGemsLogo:before {
+    content: "\f850"
+}
+
+.gits-Icon-AddReaction:before {
+    content: "\f85d"
+}
+
+.gits-Icon-DecreaseIndentLegacy:before {
+    content: "\e290"
+}
+
+.gits-Icon-IncreaseIndentLegacy:before {
+    content: "\e291"
+}
+
+.gits-Icon-SurveyQuestions:before {
+    content: "\f01b"
+}
+
+.gits-Icon-BranchCompare:before {
+    content: "\f294"
+}
+
+.gits-Icon-DiffInline:before {
+    content: "\f309"
+}
+
+.gits-Icon-DiffSideBySide:before {
+    content: "\f30a"
+}
+
+.gits-Icon-ImageDiff:before {
+    content: "\f30b"
+}
+
+.gits-Icon-GitGraph:before {
+    content: "\f2ca"
+}
+
+.gits-Icon-WordDocument:before {
+    content: "\ef71"
+}
+
+.gits-Icon-PowerPointDocument:before {
+    content: "\ef72"
+}
+
+.gits-Icon-PowerShell:before {
+    content: "\f1fd"
+}
+
+.gits-Icon-FilePDB:before {
+    content: "\f2e5"
+}
+
+.gits-Icon-FileSQL:before {
+    content: "\f2e7"
+}
+
+.gits-Icon-FileASPX:before {
+    content: "\f2e9"
+}
+
+.gits-Icon-FileSass:before {
+    content: "\f2eb"
+}
+
+.gits-Icon-FileLess:before {
+    content: "\f2ec"
+}
+
+.gits-Icon-CSharpLanguage:before {
+    content: "\f2ef"
+}
+
+.gits-Icon-VisualBasicLanguage:before {
+    content: "\f2f1"
+}
+
+.gits-Icon-CPlusPlusLanguage:before {
+    content: "\f2f3"
+}
+
+.gits-Icon-FSharpLanguage:before {
+    content: "\f2f5"
+}
+
+.gits-Icon-PythonLanguage:before {
+    content: "\f2f8"
+}
+
+.gits-Icon-CoffeeScript:before {
+    content: "\f2fa"
+}
+
+.gits-Icon-RowsChild:before {
+    content: "\f29c"
+}
+
+.gits-Icon-SemanticZoom:before {
+    content: "\e833"
+}
+
+.gits-Icon-FileTypeSolution:before {
+    content: "\f387"
+}
+
+.gits-Icon-FileYML:before {
+    content: "\f5da"
+}

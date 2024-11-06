@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Electricity department load monitoring cell APTRANSCO">
+    <title>LMC App</title>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/bs_css_icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/lmc2.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+</head>
+<body class="bg-dark-subte">
+    
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-sm-12">
+                <div class="title-img-container mx-auto">
+                    <img src="assets/img/Transco_logo/login_bg_title.png" width="4424" height="600" alt="Background Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                
+            </div>
+            <div class="col-sm-8">
+                <div class="login-img-container mx-auto">
+                    <h4 class="text-cener">Load Monitoring Cell</h4>
+                    <img src="assets/img/backgrounds/bg_003.webp" width="5000" height="3500" alt="Background Image" class="img-fluid rounded border border-2 border-success border-opacity-10">
+                </div>
+            </div>
+            
+            <div class="col-sm-4">
+                
+                <form action="#" class="row font-small fw-semibold p-3 pt-sm-0">
+                    <div class="mb-3">
+                        <h4 class=" fw-bold">Login</h4>
+                    </div>
+                    
+                    <!-- <div class="col-sm-12 mb-3 position-relative">
+                        <label for="uName" class="form-label">User Name</label>
+                        <i class="bi bi-person-fill position-absolute input-icon"></i>
+                        <input type="text" id="uName" class="form-control form-control-sm ps-5">
+                    </div> -->
+
+                    <div class="col-sm-12 mb-3 position-relative">
+                        <label for="uName" class="form-label">User Name</label>
+                        <div class="input-group"><i class="bi bi-person-fill input-group-text"></i>
+                        <input type="text" id="uName" class="form-control form-control-sm"></div>
+                    </div>
+
+                    <!-- <div class="col-sm-12 mb-3 position-relative">
+                        <label for="uName" class="form-label">Password</label>
+                        <i class="bi bi-key-fill position-absolute input-icon"></i>
+                        <input type="password" id="uName" class="form-control form-control-sm ps-5">
+                    </div> -->
+
+                    <div class="col-sm-12 position-relative">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group"><i class="bi bi-key-fill input-group-text"></i>
+                        <input type="password" id="password" class="form-control form-control-sm"></div>
+                        <div id="emailHelp" class="form-text text-end"><a href="#" class="">Forgot password?</a></div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label for="captcha" class="form-label">Captcha</label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text p-0 border-0">
+                                <img class="rounded-start" width="100" height="100%" src="data:realCaptcha/jpg;base64,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" alt="Captcha">
+                            </span>
+                            <input type="text" class="form-control" placeholder="Enter Captcha">
+                            <button class="input-group-text" type="button" title="refresh"><i class="bi bi-arrow-repeat"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 text-center mb-1">
+                        <a href="index.html" class="btn w-50 btn-sm btn-primary">Login</a>
+                    </div>
+                </form>
+            </div>
+
+            
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p class="font-small fw-semibold text-center mb-3 mb-sm-0 fixed-bottom">
+                    Transmission Corporation of Andhra Pradesh Limited © <span id="currentYear"></span> || Designed and Developed by APTRANSCO IT Wing
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

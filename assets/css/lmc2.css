@@ -1,0 +1,286 @@
+:root {
+    /*---- COLOR SCHEME ------*/
+    --navbar-bg-color-1: #1B4965; /* Electric Navy Blue */
+    --navbar-bg-color-2: #123149; 
+    --primary-color: #FFA400; /* Energy Orange for CTA buttons */
+    --secondary-color: #E0E6ED; /* Light Gray for backgrounds */
+    --accent-color: #5F6C7B; /* Graphite Gray for icons and secondary text */
+    --title-text-color: #0077B6; /* Bright Blue for headings or titles */
+    --body-text-color: #333333; /* Dark Charcoal for body text */
+    --primary-border-color: #DFE1E6;
+    --navbar-secondary-color: #e0e6ff;
+
+    /*========= TYPOGRAPHY =========*/
+    --font-family-mont: "Montserrat", sans-serif;
+    --font-family-sego: "Segoe UI", sans-serif;
+    --font-family-nuni: "Nunito", sans-serif;
+    --font-family-lato: "Lato", sans-serif;
+    --font-family-robo: "Roboto", sans-serif;
+
+    --font-size-title: 1.5rem;
+    --font-size-body: 1rem;
+    --font-size-small: 0.8rem;
+    --font-size-x-small: 0.6rem;
+    
+    --font-weight-bold: 700;
+    --font-weight-semibold: 600;
+    --font-weight-medium: 500;
+    --font-weight-regular: 400;
+
+    /*========= SPACING =========*/
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 2rem;
+
+    /*========= MEDIA QUERIES =========*/
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+
+    /*========= STATES =========*/
+    --button-hover-color: #FFB533; /* Lighter shade of Energy Orange for hover */
+    --button-active-color: #CC8400; /* Darker shade of Energy Orange for active */
+}
+
+body {
+    font-family: var(--font-family-robo);
+    color: var(--body-text-color);
+    /* background-color: var(--secondary-color); */
+}
+
+.font-mont {
+    font-family: var(--font-family-mont) !important;
+}
+.navbar-bg-1 {
+    background-color: var(--navbar-bg-color-1);
+}
+
+.navbar-bg-2 {
+    background-color: var(--navbar-bg-color-2);
+}
+.navbar-bg-secondary {
+    background-color: var(--navbar-secondary-color);
+}
+.bg-secondary-ctm {
+    background-color: var(--secondary-color);
+}
+
+.navbar-nav .nav-link.active {
+    position: relative;
+    display: inline-flex;
+}
+
+.navbar-nav .nav-link.active::after {
+    content: "";
+    display: block;
+    padding-bottom: 0 !important;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color) !important; 
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-mont) !important;
+    color: var(--title-text-color);
+    font-weight: var(--font-weight-bold);
+}
+
+.font-small {
+    font-size: var(--font-size-small);
+    font-weight: 500;
+}
+.font-x-small {
+    font-size: var(--font-size-x-small);
+}
+
+/* ---------- Buttons ----------- */
+/* Primary Button */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    font-weight: var(--font-weight-bold) !important;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--button-hover-color) !important;
+}
+
+.btn-primary:active {
+    background-color: var(--button-active-color) !important;
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: var(--accent-color) !important; /* Graphite Gray */
+    color: #ffffff !important;
+    font-weight: var(--font-weight-regular) !important;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #78828E !important; /* Slightly lighter shade of Graphite Gray */
+}
+
+.btn-secondary:active {
+    background-color: #495361 !important; /* Darker shade for pressed state */
+}
+
+/* Outlined Button */
+.btn-outline-primary {
+    background-color: transparent !important;
+    color: var(--primary-color) !important;
+    font-weight: var(--font-weight-regular) !important;
+    border: 1px solid var(--primary-color) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.btn-outline-primary:active {
+    background-color: var(--button-active-color); /* Slightly darker for active state */
+    color: #ffffff;
+}
+
+
+/* Icons */
+
+.icon {
+    color: var(--accent-color);
+}
+
+.card, .form-background {
+    background-color: var(--secondary-color);
+    color: var(--body-text-color);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    border: 2px solid #DFE1E6;
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    border-color: #5E9BAA !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(94, 155, 170, 0.25); /* Subtle teal-blue shadow */
+  }
+
+a {
+    color: var(--title-text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+/* Tables */
+
+/* Table Wrapper */
+.table {
+    background-color: var(--background-color, #F7F9FC); /* Light background for readability */
+    color: var(--body-text-color, #2B3A42); /* Dark text for good contrast */
+    border-radius: 8px; /* Optional: Rounded corners for a modern look */
+    overflow: hidden; /* Clips borders for rounded corners */
+    font-size: var(--font-size-x-small);
+}
+
+/* Table Header */
+.table thead th {
+    background-color: var(--accent-color, #5F6C7B); /* Darker background for headers */
+    color: #FFFFFF; /* White text for contrast */
+    font-weight: var(--font-weight-bold, 600); /* Make header text bold */
+    text-align: left;
+}
+
+/* Table Rows */
+.table tbody tr {
+    border-bottom: 1px solid var(--secondary-color, #E3E9F0); /* Subtle border between rows */
+    font-weight: 500;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: var(--secondary-color, #E3E9F0); /* Light gray for alternating rows */
+}
+
+/* Table Cells */
+.table tbody td {
+    padding: 12px;
+    color: var(--body-text-color, #2B3A42);
+}
+
+/* Hover Effect */
+.table tbody tr:hover {
+    background-color: var(--hover-color, #D1DEE7); /* Slightly darker shade for row hover */
+    color: var(--hover-text-color, #2B3A42); /* Dark text for hover */
+}
+
+.w-10 {
+    width: 10% !important;
+}
+
+.w-15 {
+    width: 15% !important;
+}
+
+.mt-6 {
+    margin-top: 60px;
+}
+
+/* Dropdowns */
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+    clear: both;
+    font-weight: 400;
+    color: var(--bs-dropdown-link-color);
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    border-radius: var(--bs-dropdown-item-border-radius, 0);
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    color: var(--bs-dropdown-link-hover-color);
+    background-color: var(--navbar-secondary-color);
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    color: var(--bs-dropdown-link-active-color);
+    text-decoration: none;
+    background-color: var(--navbar-bg-color-1);
+}
+
+.dropdown-item.disabled,
+.dropdown-item:disabled {
+    color: var(--bs-dropdown-link-disabled-color);
+    pointer-events: none;
+    background-color: transparent;
+}
+.title-img-container {
+    width: 40%;
+    /* height: 300px; */
+}
+
+.login-img-container {
+    width: 100%;
+}
+.input-icon {
+    left: 25px; top: 75%; transform: translateY(-50%);
+}
