@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMC | User Management</title>
+    <link rel="shortcut icon" href="assets/img/favicons/aptransco-favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/bs_css_icons/bootstrap-icons.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/transco-styles.css"> -->
+    <link rel="stylesheet" href="assets/css/lmc2.css">
+
+    <!--Font Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!--Font Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark shadow py-0 navbar-bg-1 small fixed-top">
+
+        <div class="container-fluid">
+    
+            <a href="#" class="navbar-brand d-flex">
+                <img class="d-inline-block align-text-top" src="assets/img/Transco_logo/transperant.png" width="30" height="30" alt="APTRANSCO"><span class="fw-bold align-self-center">LMC</span>
+            </a>
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="offcanvas offcanvas-start navbar-bg-1" id="navbarContent">
+
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    <ul id="topNav" class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link pb-0 text-white" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle mb-0" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              APTRANSCO
+                            </a>
+                            <ul class="dropdown-menu font-small">
+                              <li><a class="dropdown-item" href="aptPSposition.html">Power Supply Position</a></li>
+                              <li><a class="dropdown-item" href="aptPSforecast.html">Power Supply Forecast</a></li>  
+                            </ul>
+                        </li>
+    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              DISCOMs
+                            </a>
+                            <ul class="dropdown-menu font-small">
+                              <li><a class="dropdown-item" href="aptransco.html">Power Supply Position</a></li>
+                              <li><a class="dropdown-item" href="#">Agl. Power Supply Position</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Feeder Breakdowns</a></li>
+                              <li><a class="dropdown-item" href="#">Replacement of Failed DTR's</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">DISCOMS Quota</a></li>
+                              <li><a class="dropdown-item" href="#">DISCOMS Peak</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                CM Dashboard
+                            </a>
+                            <ul class="dropdown-menu font-small">
+                              <li><a class="dropdown-item" href="aptransco.html">Power Supply Position (Domestic and Commercial)</a></li>
+                              <li><a class="dropdown-item" href="#">Power Supply Position (Industrial)</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Feeder Breakdowns (33/11 KV)</a></li>
+                              <li><a class="dropdown-item" href="#">Coal Stock Position</a></li>
+                              <li><a class="dropdown-item" href="#">Generation (AP Share )</a></li>
+                            </ul>
+                        </li> 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Admin
+                            </a>
+                            <ul class="dropdown-menu font-small">
+                              <li><a class="dropdown-item" href="#">Companies</a></li>
+                              <li><a class="dropdown-item" href="#">Users</a></li>
+                            </ul>
+                        </li>            
+                    </ul>
+                    <div class="me-0">
+                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                            <li class="nav-item me-2">
+                                <ul class="navbar-nav py-2 font-sm text-white">
+                                    <li class="nav-item">1086345</li>
+                                    <li class="nav-item ms-1">S.Appa Rao,</li>
+                                    <li class="nav-item ms-1">ACIDO/IT Apps,</li>
+                                    <li class="nav-item ms-1">Vidyut Soudha/Vijayawada</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropstart font-sm">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/img/uifaces/Face01.jpeg" alt="Profile Icon" class="rounded rounded-pill img" width="20" height="20">
+                                </a>
+                                <ul class="dropdown-menu font-small">
+        
+                                    <li><a class="dropdown-item fw-semibold" href="#">
+        
+                                    <i class="bi bi-person-fill"></i>
+                                            Profile</a></li>
+        
+                                    <li><a class="dropdown-item fw-semibold" href="changepwd.html">
+                                    <i class="bi bi-key-fill"></i>
+                                            Change Password</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item fw-semibold" href="login.html">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                            Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+    </nav>
+
+    <div class="container-fluid mt-5">
+        <ul class="nav nav-tabs button-tabs-1" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Department</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Others</button>
+            </li>
+            
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                <div class="row mt-3 d-flex">
+                    <div class="col-sm-4 align-self-end">
+                        <form action="#" class="row small fw-semibold">
+                            <label for="idNbr" class="col-sm-3 col-form-label">ID Number</label>
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <input type="text" class="form-control" id="idNbr" />
+                            </div>
+                            <div class="col-sm-3 mb-3 mb-sm-0">
+                                <button class="btn btn-sm btn-primary w-100 ms-auto align-self-end" onclick="empUserDetails()" type="button"><i class="bi bi-eye-fill"></i> View</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-8">
+                        <form action="#" class="row mx-1 font-small border border-success p-2 rounded d-none" id="empUserDetails">
+                            <label for="name" class="col-sm-1 col-form-label">Name</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="name" value="Suresh Kumar" disabled>
+                            </div>
+                            <label for="desig" class="col-sm-1 col-form-label">Designation</label>
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <input type="text" class="form-control" id="desig" value="ADE" disabled>
+                            </div>
+                            <div class="col-md-2 d-flex">
+                                <button class="btn btn-sm btn-primary w-100 ms-auto align-self-end" type="button" onclick="addEmpUser()"><i class="bi bi-plus-circle"></i> Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-sm-12">
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>S No</th>
+                                        <th>Name</th>
+                                        <th>Designation</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td><td></td>
+                                        <td><i class="bi bi-trash-fill"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">Others</div>
+          </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/lmc.js"></script>
+
+</body>
+</html>

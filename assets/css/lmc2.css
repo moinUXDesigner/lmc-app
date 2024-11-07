@@ -284,3 +284,39 @@ a:hover {
 .input-icon {
     left: 25px; top: 75%; transform: translateY(-50%);
 }
+/*============ Button Tabs - 1 // Navtabs with anchor tags and buttons =============*/
+.button-tabs-1 {
+    margin-bottom: 0.3rem;
+    border: none;
+  }
+  .button-tabs-1 > .nav-item {
+    /*apply button-tabs-1 class to ul element*/
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .button-tabs-1 > .nav-item > .nav-link {
+    border-radius: 3%;
+    padding: 3px 10px 3px 20px;
+    /* padding-top: 0;
+    padding-bottom: 0; */
+    background-color: #f2f2f2;
+    color: #000;
+    border: none;
+    font-weight: 700;
+    font-size: 0.6rem;
+    box-shadow: 0.05rem 0.05rem 0.1rem rgba(0, 0, 0, 0.25);
+  }
+  
+  .button-tabs-1 > .nav-item > .level-0-btn {
+    font-size: 0.7rem;
+  }
+  .button-tabs-1 > .nav-item > .level-0-btn i {
+      font-size: 0.8rem;
+      font-weight: bolder;
+    }
+  
+  .button-tabs-1 > .nav-item > .nav-link.active {
+    background-color: var(--navbar-bg-color-1);
+    color: #fff;
+  }

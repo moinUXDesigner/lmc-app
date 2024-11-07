@@ -21,3 +21,13 @@ function psPositionView() {
     searchForm.classList.add('d-none');
     addBtn.classList.add('d-none');
 }
+
+function empUserDetails() {
+    const empUserDetails = document.getElementById('empUserDetails');
+    empUserDetails.classList.remove('d-none');
+}
+
+function addEmpUser() {
+    const empUserDetails = document.getElementById('empUserDetails');
+    empUserDetails.classList.add('d-none');
+}
