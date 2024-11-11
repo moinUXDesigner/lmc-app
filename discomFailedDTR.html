@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Electricity department load monitoring cell APTRANSCO">
+    <title>LMC App</title>
+    <link rel="shortcut icon" href="assets/img/favicons/aptransco-favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/bs_css_icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/lmc2.css">
+
+    <!--Font Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!--Font Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <div class="container-fluid ">
+        <div class="container-fluid font-small mt-4">
+            <div class="row top-1 mt-5">
+                <h5 class="col-sm-5 mt-auto">Replacement of Failed DTR's of Previous Day</h5>
+                <div class="col-sm-5">
+                    <form class="row row-cols-lg-auto g-3 mb-3 mb-sm-0 align-items-center" id="searchForm">
+                        <label class="col-4" for="inlineFormInputGroupUsername">From</label>
+                        <div class="col-8">
+                            <input type="date" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+                        </div>
+
+                        <label class="col-4" for="inlineFormInputGroupUsername">To</label>
+                        <div class="col-8">
+                            <div class="input-group">
+                                <input type="date" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <button class="btn btn-secondary small w-100" type="button" title="search">Search &nbsp; <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                      
+                        <!-- <div class="col-12">
+                          <button type="submit" class="btn btn-secondary"> Search</button>
+                        </div> -->
+                      </form>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-sm small btn-primary float-end" type="button" id="psPosAddBtn" onclick="psPositionView()"><i class="bi bi-plus-circle"></i> Add New</button>
+                </div>
+            </div>
+
+                
+            <form class="d-none bg-light p-3 rounded-2 border border-secondary-subtle shadow-sm" id="prevDayPsPositionForm">
+                <div class="container">
+                    <div class="row g-3 mb-3">
+                    <label for="entryDate_input" class="col-sm-3 col-form-label required">Report Date *</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="entryDate_input" name="entryDate_input">
+                    </div>
+                    
+                    <label for="distName_input" class="col-sm-3 col-form-label required">District Name *</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="distName_input" name="distName_input">
+                    </div>
+                    
+                    <label for="dtrsFailed" class="col-sm-3 col-form-label required">DTRs failed during the day *</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="dtrsFailed" name="dtrsFailed" maxlength="99999">
+                    </div>
+                    
+                    <label for="dtrsReplacedDd" class="col-sm-3 col-form-label required">DTRs Replaced During the day *</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="dtrsReplacedDd" name="dtrsReplacedDd" maxlength="99999">
+                    </div>
+                    
+                    <label for="deviationsUrban" class="col-sm-3 col-form-label">Deviations Urban</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="deviationsUrban" name="deviationsUrban" maxlength="99999">
+                    </div>
+                    
+                    <label for="deviationsRural" class="col-sm-3 col-form-label">Deviations Rural</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="deviationsRural" name="deviationsRural" maxlength="99999">
+                    </div>
+                    
+                    <label for="healthyStock" class="col-sm-3 col-form-label required">Healthy Stock *</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="healthyStock" name="healthyStock" maxlength="99999">
+                    </div>
+                    
+                    <div class="col-sm-6 text-end">
+                        <button type="submit" class="btn btn-primary" onclick="prevDayPsPosition()"><i class="bi bi-floppy"></i> Save</button>
+                    </div>
+                    </div>
+                </div>                      
+            </form>
+                        
+
+                         
+        </div>
+        
+        <div class="row mt-3" id="prevDayPsPositionTable">
+            <div class="col-sm-12">
+                <table class="table table-sm">
+                    <thead>
+                        <tr role="row">
+                            <th id="form:searchResults:format5_entryDate"  >
+                                <div class="ui-dt-c"><span>Report Date</span></div>
+                            </th>
+                            <th id="form:searchResults:format5_distName"  
+                                style="text-align: left;">
+                                <div class="ui-dt-c"><span>District Name</span></div>
+                            </th>
+                            <th id="form:searchResults:format5_flex1"  >
+                                <div class="ui-dt-c"><span>Total No. of DTRs</span></div>
+                            </th>
+                            <th id="form:searchResults:format5_dtrsFailed"  >
+                                <div class="ui-dt-c"><span>DTRs failed during the day</span></div>
+                            </th>
+                            <th id="form:searchResults:format5_dtrsReplacedDd"  >
+                                <div class="ui-dt-c"><span>DTRs Replaced During the day</span></div>
+                            </th>
+                            <th id="form:searchResults:format5_deviationsUrban"  >
+                                <div class="ui-dt-c"><span>Deviations Urban</span></div>
+                            </th>
+                            <th id="form:searchResults:format5_deviationsRural"  >
+                                <div class="ui-dt-c"><span>Deviations Rural</span></div>
+                            </th>
+                            <th id="form:searchResults:format5_healthyStock"  >
+                                <div class="ui-dt-c"><span>Healthy Stock</span></div>
+                            </th>
+                            <th id="form:searchResults:actions" class="ui-state-default actions-column" >
+                                <div class="ui-dt-c"><span>Actions</span></div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tfoot></tfoot>
+                    <tbody id="form:searchResults_data" class="ui-datatable-data ui-widget-content">
+                        <tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row">
+                            <td role="gridcell">
+                                <div class="ui-dt-c">10-11-2024</div>
+                            </td>
+                            <td role="gridcell" style="text-align: left;">
+                                <div class="ui-dt-c">KRISHNA</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">72860</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">216</div>
+                            </td>
+                            <td role="gridcell" class="actions-column">
+                                <div class="ui-dt-c"><a id="form:searchResults:0:j_idt102" href="#" class="ui-commandlink ui-button"
+                                        onclick="PrimeFaces.addSubmitParam('form',{'form:searchResults:0:j_idt102':'form:searchResults:0:j_idt102'}).submit('form');"
+                                        title="Edit 5/SPDCL/spdcluser">
+                                        <div class="ui-button ui-icon iconEdit"></div>
+                                    </a></div>
+                            </td>
+                        </tr>
+                        <tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row">
+                            <td role="gridcell">
+                                <div class="ui-dt-c">10-11-2024</div>
+                            </td>
+                            <td role="gridcell" style="text-align: left;">
+                                <div class="ui-dt-c">GUNTUR</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">66556</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">1</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">265</div>
+                            </td>
+                            <td role="gridcell" class="actions-column">
+                                <div class="ui-dt-c"><a id="form:searchResults:1:j_idt102" href="#" class="ui-commandlink ui-button"
+                                        onclick="PrimeFaces.addSubmitParam('form',{'form:searchResults:1:j_idt102':'form:searchResults:1:j_idt102'}).submit('form');"
+                                        title="Edit 5/SPDCL/spdcluser">
+                                        <div class="ui-button ui-icon iconEdit"></div>
+                                    </a></div>
+                            </td>
+                        </tr>
+                        <tr data-ri="2" class="ui-widget-content ui-datatable-even" role="row">
+                            <td role="gridcell">
+                                <div class="ui-dt-c">10-11-2024</div>
+                            </td>
+                            <td role="gridcell" style="text-align: left;">
+                                <div class="ui-dt-c">PRAKASAM</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">83294</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">5</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">182</div>
+                            </td>
+                            <td role="gridcell" class="actions-column">
+                                <div class="ui-dt-c"><a id="form:searchResults:2:j_idt102" href="#" class="ui-commandlink ui-button"
+                                        onclick="PrimeFaces.addSubmitParam('form',{'form:searchResults:2:j_idt102':'form:searchResults:2:j_idt102'}).submit('form');"
+                                        title="Edit 5/SPDCL/spdcluser">
+                                        <div class="ui-button ui-icon iconEdit"></div>
+                                    </a></div>
+                            </td>
+                        </tr>
+                        <tr data-ri="3" class="ui-widget-content ui-datatable-odd" role="row">
+                            <td role="gridcell">
+                                <div class="ui-dt-c">08-11-2024</div>
+                            </td>
+                            <td role="gridcell" style="text-align: left;">
+                                <div class="ui-dt-c">KRISHNA</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">72860</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">37</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">23</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">216</div>
+                            </td>
+                            <td role="gridcell" class="actions-column">
+                                <div class="ui-dt-c"><a id="form:searchResults:3:j_idt102" href="#" class="ui-commandlink ui-button"
+                                        onclick="PrimeFaces.addSubmitParam('form',{'form:searchResults:3:j_idt102':'form:searchResults:3:j_idt102'}).submit('form');"
+                                        title="Edit 5/SPDCL/spdcluser">
+                                        <div class="ui-button ui-icon iconEdit"></div>
+                                    </a></div>
+                            </td>
+                        </tr>
+                        <tr data-ri="4" class="ui-widget-content ui-datatable-even" role="row">
+                            <td role="gridcell">
+                                <div class="ui-dt-c">08-11-2024</div>
+                            </td>
+                            <td role="gridcell" style="text-align: left;">
+                                <div class="ui-dt-c">GUNTUR</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">66556</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">19</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">25</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">265</div>
+                            </td>
+                            <td role="gridcell" class="actions-column">
+                                <div class="ui-dt-c"><a id="form:searchResults:4:j_idt102" href="#" class="ui-commandlink ui-button"
+                                        onclick="PrimeFaces.addSubmitParam('form',{'form:searchResults:4:j_idt102':'form:searchResults:4:j_idt102'}).submit('form');"
+                                        title="Edit 5/SPDCL/spdcluser">
+                                        <div class="ui-button ui-icon iconEdit"></div>
+                                    </a></div>
+                            </td>
+                        </tr>
+                        <tr data-ri="5" class="ui-widget-content ui-datatable-odd" role="row">
+                            <td role="gridcell">
+                                <div class="ui-dt-c">08-11-2024</div>
+                            </td>
+                            <td role="gridcell" style="text-align: left;">
+                                <div class="ui-dt-c">PRAKASAM</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">83294</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">52</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">51</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">182</div>
+                            </td>
+                            <td role="gridcell" class="actions-column">
+                                <div class="ui-dt-c"><a id="form:searchResults:5:j_idt102" href="#" class="ui-commandlink ui-button"
+                                        onclick="PrimeFaces.addSubmitParam('form',{'form:searchResults:5:j_idt102':'form:searchResults:5:j_idt102'}).submit('form');"
+                                        title="Edit 5/SPDCL/spdcluser">
+                                        <div class="ui-button ui-icon iconEdit"></div>
+                                    </a></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/lmc.js"></script>
+</body>
+</html>

@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LMC |User Management</title>
+    <title>LMC | User Management</title>
     <link rel="shortcut icon" href="assets/img/favicons/aptransco-favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap/bs_css_icons/bootstrap-icons.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/transco-styles.css"> -->
     <link rel="stylesheet" href="assets/css/lmc2.css">
 
     <!--Font Montserrat -->
@@ -27,7 +28,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark shadow py-0 navbar-bg-1 small fixed-top">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark shadow py-0 navbar-bg-1 small fixed-top">
 
         <div class="container-fluid">
     
@@ -95,8 +96,8 @@
                                 Admin
                             </a>
                             <ul class="dropdown-menu font-small">
-                              <li><a class="dropdown-item" href="#">Companies</a></li>
-                              <li><a class="dropdown-item" href="#">Users</a></li>
+                              <li><a class="dropdown-item" href="admincompanies.html">Companies</a></li>
+                              <li><a class="dropdown-item" href="adminusers.html">Users</a></li>
                             </ul>
                         </li>            
                     </ul>
@@ -139,93 +140,144 @@
             </div>
         </div>
     
-    </nav>
+    </nav> -->
 
-    <div class="container-fluid">
-        <form class="row top-1 mt-5 g-3 mb-3">
-            <h5 class="mt-auto">Add Company</h5>
-            <div class="col-md-3">
-                <label for="entryDate_input" class="form-label required">Company Name *</label>
-                <div class="input-group">
-                    <input type="text" id="entryDate_input" name="entryDate_input" class="form-control" aria-label="Power Position Date">
-                    <!-- <button type="button" class="btn btn-outline-secondary"><i class="bi bi-calendar"></i></button> -->
+    <div id="navbar"></div>
+
+    <div class="container-fluid mt-5">
+        <h5 class="mt-auto">Users</h5>
+        <ul class="nav nav-tabs button-tabs-1" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Department</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Others</button>
+            </li>
+            
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                <div class="row mt-3 d-flex">
+                    <div class="col-sm-4 align-self-end">
+                        <form action="#" class="row small fw-semibold">
+                            <label for="idNbr" class="col-sm-3 col-form-label">ID Number</label>
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <input type="text" class="form-control" id="idNbr" />
+                            </div>
+                            <div class="col-sm-3 mb-3 mb-sm-0">
+                                <button class="btn btn-sm btn-primary w-100 ms-auto align-self-end" onclick="empUserDetails()" type="button"><i class="bi bi-eye-fill"></i> View</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-8">
+                        <form action="#" class="row mx-1 font-small border border-success p-2 rounded d-none" id="empUserDetails">
+                            <label for="name" class="col-sm-1 col-form-label">Name</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="name" value="Suresh Kumar" disabled>
+                            </div>
+                            <label for="desig" class="col-sm-1 col-form-label">Designation</label>
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <input type="text" class="form-control" id="desig" value="ADE" disabled>
+                            </div>
+                            <div class="col-md-2 d-flex">
+                                <button class="btn btn-sm btn-primary w-100 ms-auto align-self-end" type="button" onclick="addEmpUser()"><i class="bi bi-plus-circle"></i> Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-sm-12">
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>S No</th>
+                                        <th>Name</th>
+                                        <th>Designation</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td><td></td>
+                                        <td><button class="bg-transparent border-0" type="button" title="delete"><i class="bi bi-trash-fill"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <label for="energyMet" class="form-label required">Location *</label>
-                <input type="text" id="energyMet" name="energyMet" class="form-control" maxlength="99999">
-            </div>
-            <div class="col-md-3">
-                <label for="energyDef" class="form-label required">Short Name *</label>
-                <input type="text" id="energyDef" name="energyDef" class="form-control" maxlength="99999">
-            </div>
-            <div class="col-md-2">
-                <label for="thermal" class="form-label required">Type *</label>
-                <input type="text" id="thermal" name="thermal" class="form-control" maxlength="99999">
-            </div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
 
-            
-            <div class="col-md-1 d-flex">
-                <button class="btn btn-sm btn-primary w-100 ms-auto align-self-end" type="button" onclick="prevDayPsPosition()"><i class="bi bi-plus-circle"></i> Add</button>
-            </div>
-            
-        </form>
+                <form class="" id="prevDayPsPositionForm">        
+                    <!-- Grid Consumption, Energy Deficit, Thermal, Hydel -->
+                    <div class="row g-3">
+                        <div class="col-md-2">
+                            <label for="entryDate_input" class="form-label required">Employee ID *</label>
+                            <div class="input-group">
+                                <input type="text" id="entryDate_input" name="entryDate_input" class="form-control" aria-label="Power Position Date">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="energyMet" class="form-label required">Employee Name *</label>
+                            <input type="text" id="energyMet" name="energyMet" class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="energyDef" class="form-label required">Designation *</label>
+                            <input type="text" id="energyDef" name="energyDef" class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="thermal" class="form-label required">Mobile Number*</label>
+                            <input type="text" id="thermal" name="thermal" class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="hydel" class="form-label required">Email ID *</label>
+                            <input type="text" id="hydel" name="hydel" class="form-control">
+                        </div>
+                        <div class="col-md-1 d-flex">
+                            <button class="btn btn-primary ms-auto align-self-end w-100" type="button"><i class="bi bi-floppy"></i> &nbsp; Save</button>
+                        </div>
+                    </div>
+                </form>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="table-responsive">
-                    <table class="table table-sm">
-                        <thead>
-                            <tr>
-                                <th>S No</th>
-                                <th>Company Name</th>
-                                <th>Location</th>
-                                <th>Short Name</th>
-                                <th>Type</th>
-                                <th>Users</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>APGENCO</td>
-                                <td>Ibrahimpatnam</td>
-                                <td>VTPS</td>
-                                <td>Generation</td>
-                                <td><a class="nav-link" href="users.html"><i class="bi bi-people-fill"></i></a></td>
-                                <td><i class="bi bi-pencil-fill"></i></td>
-                                <td><i class="bi bi-trash-fill"></i></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>APGENCO</td>
-                                <td>Ibrahimpatnam</td>
-                                <td>VTPS</td>
-                                <td>Generation</td>
-                                <td><i class="bi bi-people-fill"></i></td>
-                                <td><i class="bi bi-pencil-fill"></i></td>
-                                <td><i class="bi bi-trash-fill"></i></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>APGENCO</td>
-                                <td>Ibrahimpatnam</td>
-                                <td>VTPS</td>
-                                <td>Generation</td>
-                                <td><i class="bi bi-people-fill"></i></td>
-                                <td><i class="bi bi-pencil-fill"></i></td>
-                                <td><i class="bi bi-trash-fill"></i></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                 <!-- Table -->
+                 <div class="row mt-3">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>S No</th>
+                                        <th>ID No</th>
+                                        <th>Employee Name</th>
+                                        <th>Designation</th>
+                                        <th>Mobile No</th>
+                                        <th>Email ID</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td> <td></td> <td></td> <td></td>
+                                        <td><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></td>
+                                        <td><button class="bg-transparent border-0" type="button" title="delete"><i class="bi bi-trash-fill"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+          </div>
     </div>
 
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/lmc.js"></script>
 
 </body>
 </html>

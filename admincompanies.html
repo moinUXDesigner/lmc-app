@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Electricity department load monitoring cell APTRANSCO">
-    <title>LMC App</title>
+    <title>LMC |User Management</title>
     <link rel="shortcut icon" href="assets/img/favicons/aptransco-favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -28,7 +27,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark shadow py-0 navbar-bg-1 small fixed-top">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark shadow py-0 navbar-bg-1 small fixed-top">
 
         <div class="container-fluid">
     
@@ -58,7 +57,7 @@
                             </a>
                             <ul class="dropdown-menu font-small">
                               <li><a class="dropdown-item" href="aptPSposition.html">Power Supply Position</a></li>
-                              <li><a class="dropdown-item" href="#">Power Supply Forecast</a></li>  
+                              <li><a class="dropdown-item" href="aptPSforecast.html">Power Supply Forecast</a></li>  
                             </ul>
                         </li>
     
@@ -84,13 +83,22 @@
                             </a>
                             <ul class="dropdown-menu font-small">
                               <li><a class="dropdown-item" href="aptransco.html">Power Supply Position (Domestic and Commercial)</a></li>
-                              <li><a class="dropdown-item" href="aptPSforecast.html">Power Supply Position (Industrial)</a></li>
+                              <li><a class="dropdown-item" href="#">Power Supply Position (Industrial)</a></li>
                               <li><hr class="dropdown-divider"></li>
                               <li><a class="dropdown-item" href="#">Feeder Breakdowns (33/11 KV)</a></li>
                               <li><a class="dropdown-item" href="#">Coal Stock Position</a></li>
                               <li><a class="dropdown-item" href="#">Generation (AP Share )</a></li>
                             </ul>
-                        </li>               
+                        </li> 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" aria-current="page" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Admin
+                            </a>
+                            <ul class="dropdown-menu font-small">
+                              <li><a class="dropdown-item" href="admincompanies.html">Companies</a></li>
+                              <li><a class="dropdown-item" href="adminusers.html">Users</a></li>
+                            </ul>
+                        </li>            
                     </ul>
                     <div class="me-0">
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
@@ -106,7 +114,7 @@
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src="assets/img/uifaces/Face01.jpeg" alt="Profile Icon" class="rounded rounded-pill img" width="20" height="20">
                                 </a>
-                                <ul class="dropdown-menu font-small navbar-bg-secondary">
+                                <ul class="dropdown-menu font-small">
         
                                     <li><a class="dropdown-item fw-semibold" href="#">
         
@@ -131,12 +139,95 @@
             </div>
         </div>
     
-    </nav>
+    </nav> -->
 
+    <div id="navbar"></div>
+    <div class="container-fluid">
+        <form class="row top-1 mt-5 g-3 mb-3">
+            <h5 class="mt-auto">Add Company</h5>
+            <div class="col-md-3">
+                <label for="entryDate_input" class="form-label required">Company Name *</label>
+                <div class="input-group">
+                    <input type="text" id="entryDate_input" name="entryDate_input" class="form-control" aria-label="Power Position Date">
+                    <!-- <button type="button" class="btn btn-outline-secondary"><i class="bi bi-calendar"></i></button> -->
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="energyMet" class="form-label required">Location *</label>
+                <input type="text" id="energyMet" name="energyMet" class="form-control" maxlength="99999">
+            </div>
+            <div class="col-md-3">
+                <label for="energyDef" class="form-label required">Short Name *</label>
+                <input type="text" id="energyDef" name="energyDef" class="form-control" maxlength="99999">
+            </div>
+            <div class="col-md-2">
+                <label for="thermal" class="form-label required">Type *</label>
+                <input type="text" id="thermal" name="thermal" class="form-control" maxlength="99999">
+            </div>
 
-    <h3>APTRANSCO</h3>
+            
+            <div class="col-md-1 d-flex">
+                <button class="btn btn-sm btn-primary w-100 ms-auto align-self-end" type="button" onclick="prevDayPsPosition()"><i class="bi bi-plus-circle"></i> Add</button>
+            </div>
+            
+        </form>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>S No</th>
+                                <th>Company Name</th>
+                                <th>Location</th>
+                                <th>Short Name</th>
+                                <th>Type</th>
+                                <th>Users</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>APGENCO</td>
+                                <td>Ibrahimpatnam</td>
+                                <td>VTPS</td>
+                                <td>Generation</td>
+                                <td><a class="nav-link" href="adminusers.html"><i class="bi bi-people-fill"></i></a></td>
+                                <td><i class="bi bi-pencil-fill"></i></td>
+                                <td><i class="bi bi-trash-fill"></i></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>APGENCO</td>
+                                <td>Ibrahimpatnam</td>
+                                <td>VTPS</td>
+                                <td>Generation</td>
+                                <td><i class="bi bi-people-fill"></i></td>
+                                <td><i class="bi bi-pencil-fill"></i></td>
+                                <td><i class="bi bi-trash-fill"></i></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>APGENCO</td>
+                                <td>Ibrahimpatnam</td>
+                                <td>VTPS</td>
+                                <td>Generation</td>
+                                <td><i class="bi bi-people-fill"></i></td>
+                                <td><i class="bi bi-pencil-fill"></i></td>
+                                <td><i class="bi bi-trash-fill"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/lmc.js"></script>
+
 </body>
 </html>
