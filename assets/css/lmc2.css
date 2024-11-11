@@ -320,3 +320,6 @@ a:hover {
     background-color: var(--navbar-bg-color-1);
     color: #fff;
   }
+  .mt-4-rem {
+    margin-top: 4rem;
+  }
