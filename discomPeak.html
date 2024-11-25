@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Electricity department load monitoring cell APTRANSCO">
+    <title>LMC App</title>
+    <link rel="shortcut icon" href="assets/img/favicons/aptransco-favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/bs_css_icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/lmc2.css">
+
+    <!--Font Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!--Font Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <div class="container-fluid ">
+        <div class="container-fluid font-small mt-4">
+            <div class="row top-1 mt-5">
+                <h5 class="col-sm-5 mt-auto">DISCOMs Peak</h5>
+                <div class="col-sm-5">
+                    <form class="row row-cols-lg-auto g-3 mb-3 mb-sm-0 align-items-center" id="searchForm">
+                        <label class="col-4" for="inlineFormInputGroupUsername">From</label>
+                        <div class="col-8">
+                            <input type="date" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+                        </div>
+
+                        <label class="col-4" for="inlineFormInputGroupUsername">To</label>
+                        <div class="col-8">
+                            <div class="input-group">
+                                <input type="date" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <button class="btn btn-secondary small w-100" type="button" title="search">Search &nbsp; <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                      
+                        <!-- <div class="col-12">
+                          <button type="submit" class="btn btn-secondary"> Search</button>
+                        </div> -->
+                      </form>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-sm small btn-primary float-end" type="button" id="psPosAddBtn" onclick="psPositionView()"><i class="bi bi-plus-circle"></i> Add New</button>
+                </div>
+            </div>
+
+                
+            <form  class="d-none bg-light p-3 rounded-2 border border-secondary-subtle shadow-sm" id="prevDayPsPositionForm">    
+                <div class="container mt-4">
+                        <!-- Entry Date -->
+                        <div class="row mb-3">
+                            <label for="entryDate_input" class="col-sm-2 col-form-label required">Entry Date *</label>
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                    <input type="text" id="entryDate_input" name="entryDate_input" class="form-control hasDatepicker" aria-label="Entry Date">
+                                    <button type="button" class="btn btn-outline-secondary" aria-label="Calendar">
+                                        <i class="bi bi-calendar"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- DISCOM -->
+                        <div class="row mb-3">
+                            <label for="discomCode" class="col-sm-2 col-form-label required">DISCOM *</label>
+                            <div class="col-sm-4">
+                                <select id="discomCode" name="discomCode" class="form-select" aria-label="DISCOM">
+                                    <option value="">Select DISCOM</option>
+                                    <option value="5">EPDCL</option>
+                                    <option value="7">SPDCL</option>
+                                </select>
+                            </div>
+                        </div>
+                
+                        <!-- Peak MW -->
+                        <div class="row mb-3">
+                            <label for="peakMw" class="col-sm-2 col-form-label required">Peak MW *</label>
+                            <div class="col-sm-4">
+                                <input type="text" id="peakMw" name="peakMw" class="form-control" maxlength="99999" placeholder="Enter Peak MW">
+                            </div>
+                        </div>
+                
+                        <!-- Peak Time -->
+                        <div class="row mb-3">
+                            <label for="peakTime_input" class="col-sm-2 col-form-label required">Peak Time *</label>
+                            <div class="col-sm-4">
+                                <input type="text" id="peakTime_input" name="peakTime_input" class="form-control hasDatepicker" placeholder="Enter Peak Time">
+                            </div>
+                        </div>
+                
+                        <!-- Net LR (MU) -->
+                        <div class="row mb-3">
+                            <label for="netLr" class="col-sm-2 col-form-label required">Net LR (MU) *</label>
+                            <div class="col-sm-4">
+                                <input type="text" id="netLr" name="netLr" class="form-control" maxlength="99999" placeholder="Enter Net LR">
+                            </div>
+                        </div>
+                
+                        <!-- Submit Button -->
+                        <div class="row">
+                            <div class="col-sm-11"></div>
+                            <div class="col-md-1">
+                                <button type="submit" class="btn btn-primary float-end w-100">Save</button>
+                            </div>
+                            </div>
+                    
+                </div>
+                
+            </form>
+                     
+            
+        </div>
+        
+        <div class="row" id="prevDayPsPositionTable">
+            <div class="col-sm-12">
+                <div class="table-responsive mt-4">
+                    <table class="table table-sm" role="grid"><thead><tr role="row"><th id="form:searchResults:format7_entryDate" class="ui-state-default" role="columnheader"><div class="ui-dt-c"><span>Entry Date</span></div></th><th id="form:searchResults:format7_discomShort" class="ui-state-default" role="columnheader"><div class="ui-dt-c"><span>DISCOM</span></div></th><th id="form:searchResults:format7_peakMw" class="ui-state-default" role="columnheader"><div class="ui-dt-c"><span>Peak MW</span></div></th><th id="form:searchResults:format7_peakTime" class="ui-state-default" role="columnheader"><div class="ui-dt-c"><span>Peak Time</span></div></th><th id="form:searchResults:format7_netLr" class="ui-state-default" role="columnheader"><div class="ui-dt-c"><span>Net LR (MU)</span></div></th><th id="form:searchResults:actions" class="ui-state-default actions-column" role="columnheader"><div class="ui-dt-c"><span>Actions</span></div></th></tr></thead><tfoot></tfoot><tbody id="form:searchResults_data" class="ui-datatable-data ui-widget-content"><tr class="ui-widget-content ui-datatable-empty-message"><td colspan="6"><div class="ui-dt-c">No records found.</div></td></tr></tbody></table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/lmc.js"></script>
+</body>
+</html>

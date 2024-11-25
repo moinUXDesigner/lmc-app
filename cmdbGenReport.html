@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Electricity department load monitoring cell APTRANSCO">
+    <title>LMC App</title>
+    <link rel="shortcut icon" href="assets/img/favicons/aptransco-favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/bs_css_icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/lmc2.css">
+
+    <!--Font Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!--Font Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <div class="container-fluid ">
+        <div class="container-fluid font-small mt-4">
+            <div class="row top-1 mt-5">
+                <h5 class="col-sm-5 mt-auto">Daily Report of Generation (AP Share )</h5>
+                <div class="col-sm-5">
+                    <form class="row row-cols-lg-auto g-3 mb-3 mb-sm-0 align-items-center" id="searchForm">
+                        <label class="col-4" for="inlineFormInputGroupUsername">From</label>
+                        <div class="col-8">
+                            <input type="date" class="form-control" id="inlineFormInputGroupUsername"
+                                placeholder="Username">
+                        </div>
+
+                        <label class="col-4" for="inlineFormInputGroupUsername">To</label>
+                        <div class="col-8">
+                            <div class="input-group">
+                                <input type="date" class="form-control" id="inlineFormInputGroupUsername"
+                                    placeholder="Username">
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <button class="btn btn-secondary small w-100" type="button" title="search">Search &nbsp; <i
+                                    class="bi bi-search"></i>
+                            </button>
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-sm small btn-primary float-end" type="button" id="psPosAddBtn"
+                        onclick="psPositionView()"><i class="bi bi-plus-circle"></i> Add New</button>
+                </div>
+            </div>
+
+
+            <form class="d-none bg-light p-3 rounded-2 border border-secondary-subtle shadow-sm generation-form"
+                id="prevDayPsPositionForm">
+
+
+                <div class="row mb-3">
+                    <div class="col-sm-2 d-flex">
+                        <h6 class="align-self-center">Dr NTTPs *</h6>
+                    </div>
+                    <label for="gen1" class="col-form-label col-sm-2">Actual Generation (MU/day)</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="gen1" />
+                    </div>
+                    <label for="reason1" class="col-form-label col-sm-2">Reasons for Shortfall</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="reason1" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-2 d-flex">
+                        <h6 class="align-self-center">RTPP *</h6>
+                    </div>
+                    <label for="gen2" class="col-form-label col-sm-2">Actual Generation (MU/day)</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="gen2" />
+                    </div>
+                    <label for="reason2" class="col-form-label col-sm-2">Reasons for Shortfall</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="reason2" />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-2 d-flex">
+                        <h6 class="align-self-center">SDSTPS *</h6>
+                    </div>
+                    <label for="gen2" class="col-form-label col-sm-2">Actual Generation (MU/day)</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="gen2" />
+                    </div>
+                    <label for="reason2" class="col-form-label col-sm-2">Reasons for Shortfall</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="reason2" />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-sm-2 d-flex">
+                        <h6 class="align-self-center">APGENCO (Hydel) *</h6>
+                    </div>
+                    <label for="gen2" class="col-form-label col-sm-2">Actual Generation (MU/day)</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="gen2" />
+                    </div>
+                    <label for="reason2" class="col-form-label col-sm-2">Reasons for Shortfall</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="reason2" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-2 d-flex">
+                        <h6 class="align-self-center">CGS Allocation *</h6>
+                    </div>
+                    <label for="gen2" class="col-form-label col-sm-2">Actual Generation (MU/day)</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="gen2" />
+                    </div>
+                    <label for="reason2" class="col-form-label col-sm-2">Reasons for Shortfall</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="reason2" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-2 d-flex">
+                        <h6 class="align-self-center">IPPS+Vijjeswaram *</h6>
+                    </div>
+                    <label for="gen2" class="col-form-label col-sm-2">Actual Generation (MU/day)</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="gen2" />
+                    </div>
+                    <label for="reason2" class="col-form-label col-sm-2">Reasons for Shortfall</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="reason2" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-2 d-flex">
+                        <h6 class="align-self-center">NCE's *</h6>
+                    </div>
+                    <label for="gen2" class="col-form-label col-sm-2">Actual Generation (MU/day)</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="gen2" />
+                    </div>
+                    <label for="reason2" class="col-form-label col-sm-2">Reasons for Shortfall</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="reason2" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-2 d-flex">
+                        <h6 class="align-self-center">Purchases *</h6>
+                    </div>
+                    <label for="gen2" class="col-form-label col-sm-2">Actual Generation (MU/day)</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="gen2" />
+                    </div>
+                    <label for="reason2" class="col-form-label col-sm-2">Reasons for Shortfall</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="reason2" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-2 d-flex">
+                        <h6 class="align-self-center">AP Share of TGISTS *</h6>
+                    </div>
+                    <label for="gen2" class="col-form-label col-sm-2">Actual Generation (MU/day)</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="gen2" />
+                    </div>
+                    <label for="reason2" class="col-form-label col-sm-2">Reasons for Shortfall</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="reason2" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-11"></div>
+                    <div class="col-md-1">
+                        <button type="submit" class="btn btn-primary float-end w-100">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+       
+
+
+    </div>
+
+    <div class="row mt-3" id="prevDayPsPositionTable">
+        <div class="col-sm-12">
+            <div class="table-responsive mx-3">
+                <table class="table table-sm">
+                    <thead>
+                        <tr role="row">
+                            <th id="form:searchResults:generationsNew_entryDate">
+                                <div class="ui-dt-c"><span>Entry Date</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_actGenMU_DrNTTPs">
+                                <div class="ui-dt-c"><span>DrNTTPs</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_shortFallReason_DrNTTPs">
+                                <div class="ui-dt-c"><span>Reason: DrNTTPs</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_actGenMU_RTPP">
+                                <div class="ui-dt-c"><span>RTPP</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_shortFallReason_RTPP">
+                                <div class="ui-dt-c"><span>Reason: RTPP</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_actGenMU_SDSTPS">
+                                <div class="ui-dt-c"><span>SDSTPS</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_shortFallReason_SDSTPS">
+                                <div class="ui-dt-c"><span>Reason: SDSTPS</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_actGenMU_Hydel">
+                                <div class="ui-dt-c"><span>APGENCO (Hydel)</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_shortFallReason_Hydel">
+                                <div class="ui-dt-c"><span>Reason: APGENCO (Hydel)</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_actGenMU_CGS">
+                                <div class="ui-dt-c"><span>CGS Allocation</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_shortFallReason_CGS">
+                                <div class="ui-dt-c"><span>Reason: CGS Allocation</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_actGenMU_IPPS">
+                                <div class="ui-dt-c"><span>IPPS+Vijjeswaram</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_shortFallReason_IPPS">
+                                <div class="ui-dt-c"><span>Reason: IPPS+Vijjeswaram</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_actGenMU_NCEs">
+                                <div class="ui-dt-c"><span>NCEs</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_shortFallReason_NCEs"
+                                >
+                                <div class="ui-dt-c"><span>Reason: NCEs</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_actGenMU_Purchases"
+                                >
+                                <div class="ui-dt-c"><span>Purchases</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_shortFallReason_Purchases"
+                                >
+                                <div class="ui-dt-c"><span>Reason: Purchases</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_actGenMU_APShare"
+                                >
+                                <div class="ui-dt-c"><span>AP Share of TGISTS</span></div>
+                            </th>
+                            <th id="form:searchResults:generationsNew_shortFallReason_APShare"
+                                >
+                                <div class="ui-dt-c"><span>Reason: AP Share of TGISTS</span></div>
+                            </th>
+                            <th id="form:searchResults:actions" class="ui-state-default actions-column"
+                                >
+                                <div class="ui-dt-c"><span>Actions</span></div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="form:searchResults_data" class="ui-datatable-data ui-widget-content">
+                        <tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row">
+                            <td role="gridcell">
+                                <div class="ui-dt-c">10-11-2024</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">45.538</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">-</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">28.362</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">-</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">21.102</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">Unit-1: H/T due to BTL</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">7.223</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">Machkhund Unit-2, Unit-5: LC taken for RLA study, LSL Unit-2: T/d
+                                    on GT
+                                    Differential Relay &amp; Bucholtz Relay</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">31.483</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">MAPS Unit-1, Neyveli TS II Expn Unit-1, Neyveli TS-I Expn Unit-2,
+                                    NEYVELI TS II Unit-4: LC, Neyveli TS-II Unit-2, Simhadri Stg I Unit-2: T/d,
+                                    Ramagundam
+                                    Unit-7: LC, NTPL Unit-2 : T/d</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0.000</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">No Gas availability</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">24.838</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">Actual NCEs 26.667 but By subtracting Sales(-1.829) it was shown as
+                                    72.503</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">57.824</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">-</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">-0.129</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">-</div>
+                            </td>
+                            <td role="gridcell" class="actions-column">
+                                <div class="ui-dt-c"><a id="form:searchResults:0:j_idt110" href="#"
+                                        class="ui-commandlink ui-button"
+                                        onclick="PrimeFaces.addSubmitParam('form',{'form:searchResults:0:j_idt110':'form:searchResults:0:j_idt110'}).submit('form');"
+                                        title="Edit SLDC/aplmcuser">
+                                        <div class="ui-button ui-icon iconEdit"></div>
+                                    </a></div>
+                            </td>
+                        </tr>
+                        <tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row">
+                            <td role="gridcell">
+                                <div class="ui-dt-c">09-11-2024</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">39.998</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">-</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">23.045</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">-</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">12.802</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">"Unit-1: H/T due to BTL, Unit-3: H/T due to BTL."</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">15.068</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">Machkhund Unit-2, Unit-5: LC taken for RLA study, LSL Unit-2: T/d
+                                    on GT
+                                    Differential Relay &amp; Bucholtz Relay</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">31.662</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">MAPS Unit-1, Neyveli TS II Expn Unit-1, Neyveli TS-I Expn Unit-2,
+                                    NEYVELI TS II Unit-4: LC, Neyveli TS-II Unit-2, Simhadri Stg I Unit-2: T/d,
+                                    Ramagundam
+                                    Unit-7: LC, NTPL Unit-2 : T/d</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">0.000</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">No Gas availability</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">27.825</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">-</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">67.109</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">-</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">-0.077</div>
+                            </td>
+                            <td role="gridcell">
+                                <div class="ui-dt-c">-</div>
+                            </td>
+                            <td role="gridcell" class="actions-column">
+                                <div class="ui-dt-c"><a id="form:searchResults:1:j_idt110" href="#"
+                                        class="ui-commandlink ui-button"
+                                        onclick="PrimeFaces.addSubmitParam('form',{'form:searchResults:1:j_idt110':'form:searchResults:1:j_idt110'}).submit('form');"
+                                        title="Edit SLDC/aplmcuser">
+                                        <div class="ui-button ui-icon iconEdit"></div>
+                                    </a></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/lmc.js"></script>
+</body>
+
+</html>

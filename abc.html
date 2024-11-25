@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Generation Report</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/bs_css_icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/lmc2.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container mt-5">
+	<div class="row">
+		<!-- <div class="col-sm-4"></div> -->
+		<div class="col-sm-6">
+			<div class="card">
+				<div class="card-body">
+					<div class="d-flex justify-content-between">
+				<h6 class="card-title">Generation Report</h6>
+				<div class="row">
+					<label class="col-4 col-form-label-sm col-form-label" for="chartView">View by:</label>
+					<div class="col-8">
+						<select id="chartView" class="form-select form-select-sm small">
+							<option value="company">Company-wise</option>
+							<option value="station">Station-wise</option>
+						  </select>
+					</div>
+				</div>
+			</div>
+				<canvas id="generationChart"></canvas>
+			</div>
+			  </div>
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
+  </div>
+
+  <script>
+    // Sample data
+    const generationData = [
+      { company: "Company A", station: "Station A1", capacity: 500, generationMU: 1200, preGenerationMU: 1100 },
+      { company: "Company A", station: "Station A2", capacity: 300, generationMU: 800, preGenerationMU: 750 },
+      { company: "Company B", station: "Station B1", capacity: 600, generationMU: 1400, preGenerationMU: 1300 },
+      { company: "Company B", station: "Station B2", capacity: 400, generationMU: 1000, preGenerationMU: 950 },
+      { company: "Company C", station: "Station C1", capacity: 700, generationMU: 1500, preGenerationMU: 1400 },
+    ];
+
+    // Canvas context
+    const ctx = document.getElementById('generationChart').getContext('2d');
+
+    // Utility functions for processing data
+    const processCompanyData = () => {
+      const companies = [...new Set(generationData.map(data => data.company))];
+      const capacityData = companies.map(company =>
+        generationData.filter(d => d.company === company).reduce((sum, d) => sum + d.capacity, 0)
+      );
+      const generationMUData = companies.map(company =>
+        generationData.filter(d => d.company === company).reduce((sum, d) => sum + d.generationMU, 0)
+      );
+      const preGenerationMUData = companies.map(company =>
+        generationData.filter(d => d.company === company).reduce((sum, d) => sum + d.preGenerationMU, 0)
+      );
+      return { labels: companies, datasets: [capacityData, generationMUData, preGenerationMUData] };
+    };
+
+    const processStationData = () => {
+      const stations = generationData.map(data => `${data.company} - ${data.station}`);
+      const capacityData = generationData.map(data => data.capacity);
+      const generationMUData = generationData.map(data => data.generationMU);
+      const preGenerationMUData = generationData.map(data => data.preGenerationMU);
+      return { labels: stations, datasets: [capacityData, generationMUData, preGenerationMUData] };
+    };
+
+    // Function to create chart
+    let chartInstance;
+    const createChart = (labels, capacityData, generationMUData, preGenerationMUData) => {
+      if (chartInstance) {
+        chartInstance.destroy(); // Destroy the old chart before creating a new one
+      }
+      chartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Installed Capacity (MW)',
+              data: capacityData,
+              backgroundColor: 'rgba(54, 162, 235, 0.7)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1,
+            },
+            {
+              label: 'Generation in MU EX-BUS',
+              data: generationMUData,
+              backgroundColor: 'rgba(255, 159, 64, 0.7)',
+              borderColor: 'rgba(255, 159, 64, 1)',
+              borderWidth: 1,
+            },
+            {
+              label: 'Pre-Generation in MU EX-BUS',
+              data: preGenerationMUData,
+              backgroundColor: 'rgba(75, 192, 192, 0.7)',
+              borderColor: 'rgba(75, 192, 192, 1)',
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            tooltip: {
+              mode: 'index',
+              intersect: false,
+            },
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: 'Categories',
+              },
+            },
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Values (MW/MU)',
+              },
+            },
+          },
+        },
+      });
+    };
+
+    // Initial rendering
+    const updateChart = () => {
+      const view = document.getElementById('chartView').value;
+      if (view === 'company') {
+        const { labels, datasets } = processCompanyData();
+        createChart(labels, ...datasets);
+      } else {
+        const { labels, datasets } = processStationData();
+        createChart(labels, ...datasets);
+      }
+    };
+
+    // Event listener for dropdown
+    document.getElementById('chartView').addEventListener('change', updateChart);
+
+    // Initial chart load
+    updateChart();
+  </script>
+</body>
+</html>

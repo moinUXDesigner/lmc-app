@@ -2,9 +2,11 @@ function prevDayPsPosition() {
     const table = document.getElementById('prevDayPsPositionTable');
     const form = document.getElementById('prevDayPsPositionForm');
     const addBtn = document.getElementById('psPosAddBtn');
+    const backBtn = document.getElementById('backBtn');
     const searchForm = document.getElementById('searchForm');
 
     form.classList.add('d-none');
+    backBtn.classList.add('d-none');
     table.classList.remove('d-none');
     addBtn.classList.remove('d-none');
     searchForm.classList.remove('d-none');
@@ -15,11 +17,13 @@ function psPositionView() {
     const form = document.getElementById('prevDayPsPositionForm');
     const searchForm = document.getElementById('searchForm');
     const addBtn = document.getElementById('psPosAddBtn');
+    const backBtn = document.getElementById('backBtn');
 
     form.classList.remove('d-none');
     table.classList.add('d-none');
     searchForm.classList.add('d-none');
     addBtn.classList.add('d-none');
+    backBtn.classList.remove('d-none');
 }
 
 function empUserDetails() {

@@ -145,13 +145,28 @@
 
     <div class="container-fluid mt-5">
         <div class="row">
-            <div class="col-sm-12">
-                <h4 class="text-center position-absolute top-50 start-50 translate-middle">Home Page</h4>
+            <div class="col-sm-3">
+                <div class="card mb-2 mb-sm-0">
+                    <div class="card-body">
+                        <canvas id="psPosition" height="200"></canvas>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <canvas id="psForecast" height="200"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script src="assets/js/lmc.js"></script>
+    <script src="assets/js/dashboard.js"></script>
 </body>
 </html>

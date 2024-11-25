@@ -157,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--accent-color);
 }
 
-.card, .form-background {
+.form-background {
     background-color: var(--secondary-color);
     color: var(--body-text-color);
     border: none;
@@ -323,3 +323,23 @@ a:hover {
   .mt-4-rem {
     margin-top: 4rem;
   }
+
+  /*=================================== CM DB generation report fom ================= */
+  form.generation-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+  }
+  
+  .form-row {
+    display: contents; /* Keeps rows organized */
+  }
+  
+  .form-row label {
+    font-weight: bold;
+  }
+  
+  .datepicker {
+    width: 100%;
+  }
+  

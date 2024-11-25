@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Electricity department load monitoring cell APTRANSCO">
+    <title>LMC App</title>
+    <link rel="shortcut icon" href="assets/img/favicons/aptransco-favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/bs_css_icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/lmc2.css">
+
+    <!--Font Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!--Font Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <div class="container-fluid ">
+        <div class="container-fluid font-small mt-4">
+            <div class="row top-1 mt-5">
+                <h5 class="col-sm-5 mt-auto">Power Supply Position (Domestic and Commercial)</h5>
+                <div class="col-sm-5">
+                    <form class="row row-cols-lg-auto g-3 mb-3 mb-sm-0 align-items-center" id="searchForm">
+                        <label class="col-4" for="inlineFormInputGroupUsername">From</label>
+                        <div class="col-8">
+                            <input type="date" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+                        </div>
+
+                        <label class="col-4" for="inlineFormInputGroupUsername">To</label>
+                        <div class="col-8">
+                            <div class="input-group">
+                                <input type="date" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <button class="btn btn-secondary small w-100" type="button" title="search">Search &nbsp; <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                      
+                        <!-- <div class="col-12">
+                          <button type="submit" class="btn btn-secondary"> Search</button>
+                        </div> -->
+                      </form>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-sm small btn-primary float-end" type="button" id="psPosAddBtn" onclick="psPositionView()"><i class="bi bi-plus-circle"></i> Add New</button>
+                </div>
+            </div>
+
+                
+            <form class="d-none bg-light p-3 rounded-2 border border-secondary-subtle shadow-sm" id="prevDayPsPositionForm">
+                
+                    <div class="container">
+                      <!-- Entry Date and District Name -->
+                      <div class="row mb-3">
+                        <div class="col-md-6">
+                          <label for="entryDate" class="form-label">Entry Date *</label>
+                          <input type="text" id="entryDate" name="entryDate" class="form-control" placeholder="Select date">
+                        </div>
+                        <div class="col-md-6">
+                          <label for="distName" class="form-label">District Name *</label>
+                          <input type="text" id="distName" name="distName" class="form-control" placeholder="Enter district name">
+                        </div>
+                      </div>
+                  
+                      <!-- Corporation/DHQ Fields -->
+                      <div class="row mb-3">
+                        <div class="col-md-4">
+                          <label for="corpdhqSchlr" class="form-label">Corporation/DHQ: Scheduled LR *</label>
+                          <input type="text" id="corpdhqSchlr" name="corpdhqSchlr" class="form-control" maxlength="99999">
+                        </div>
+                        <div class="col-md-4">
+                          <label for="corpdhqMorethanSchlr" class="form-label">Corporation/DHQ: More than Scheduled LR *</label>
+                          <input type="text" id="corpdhqMorethanSchlr" name="corpdhqMorethanSchlr" class="form-control" maxlength="99999">
+                        </div>
+                        <div class="col-md-4">
+                          <label for="corpdhqNoLesslr" class="form-label">Corporation/DHQ: No/Less LR *</label>
+                          <input type="text" id="corpdhqNoLesslr" name="corpdhqNoLesslr" class="form-control" maxlength="99999">
+                        </div>
+                      </div>
+                  
+                      <!-- Municipalities Fields -->
+                      <div class="row mb-3">
+                        <div class="col-md-4">
+                          <label for="mncpSchlr" class="form-label">Municipalities: Scheduled LR *</label>
+                          <input type="text" id="mncpSchlr" name="mncpSchlr" class="form-control" maxlength="99999">
+                        </div>
+                        <div class="col-md-4">
+                          <label for="mncpMorethanSchlr" class="form-label">Municipalities: More than Scheduled LR *</label>
+                          <input type="text" id="mncpMorethanSchlr" name="mncpMorethanSchlr" class="form-control" maxlength="99999">
+                        </div>
+                        <div class="col-md-4">
+                          <label for="mncpNoLesslr" class="form-label">Municipalities: No/Less LR *</label>
+                          <input type="text" id="mncpNoLesslr" name="mncpNoLesslr" class="form-control" maxlength="99999">
+                        </div>
+                      </div>
+                  
+                      <!-- Mandal Fields -->
+                      <div class="row mb-3">
+                        <div class="col-md-4">
+                          <label for="mandalSchlr" class="form-label">Mandal: Scheduled LR *</label>
+                          <input type="text" id="mandalSchlr" name="mandalSchlr" class="form-control" maxlength="99999">
+                        </div>
+                        <div class="col-md-4">
+                          <label for="mandalMorethanSchlr" class="form-label">Mandal: More than Scheduled LR *</label>
+                          <input type="text" id="mandalMorethanSchlr" name="mandalMorethanSchlr" class="form-control" maxlength="99999">
+                        </div>
+                        <div class="col-md-4">
+                          <label for="mandalNoLesslr" class="form-label">Mandal: No/Less LR *</label>
+                          <input type="text" id="mandalNoLesslr" name="mandalNoLesslr" class="form-control" maxlength="99999">
+                        </div>
+                      </div>
+                  
+                      <!-- Villages Fields -->
+                      <div class="row mb-3">
+                        <div class="col-md-4">
+                          <label for="villSchlr" class="form-label">Villages: Scheduled LR *</label>
+                          <input type="text" id="villSchlr" name="villSchlr" class="form-control" maxlength="99999">
+                        </div>
+                        <div class="col-md-4">
+                          <label for="villMorethanSchlr" class="form-label">Villages: More than Scheduled LR *</label>
+                          <input type="text" id="villMorethanSchlr" name="villMorethanSchlr" class="form-control" maxlength="99999">
+                        </div>
+                        <div class="col-md-4">
+                          <label for="villNoLesslr" class="form-label">Villages: No/Less LR *</label>
+                          <input type="text" id="villNoLesslr" name="villNoLesslr" class="form-control" maxlength="99999">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-11"></div>
+                        <div class="col-md-1">
+                          <button type="submit" class="btn btn-primary float-end w-100">Save</button>
+                        </div>
+                      </div>
+                    </div>
+                                                     
+            </form>
+                        
+
+                         
+        </div>
+        
+        <div class="row mt-3" id="prevDayPsPositionTable">
+            <div class="col-sm-12">
+                <table class="table table-sm" role="grid">
+                    <thead>
+                        <tr>
+                            <th id="form:searchResults:pspDomComm_entryDate">
+                                <div><span>Entry Date</span></div>
+                            </th>
+                            <th id="form:searchResults:pspDomComm_distName">
+                                <div><span>District Name</span></div>
+                            </th>
+                            <th id="form:searchResults:pspDomComm_corpdhqSchlr">
+                                <div><span>Corporation/DHQ: Scheduled LR</span></div>
+                            </th>
+                            <th id="form:searchResults:pspDomComm_corpdhqMorethanSchlr">
+                                <div><span>Corporation/DHQ: More than Scheduled LR</span></div>
+                            </th>
+                            <th id="form:searchResults:pspDomComm_corpdhqNoLesslr">
+                                <div><span>Corporation/DHQ: No/Less LR</span></div>
+                            </th>
+                            <th id="form:searchResults:pspDomComm_mncpSchlr">
+                                <div><span>Municipalities: Scheduled LR</span></div>
+                            </th>
+                            <th id="form:searchResults:pspDomComm_mncpMorethanSchlr">
+                                <div><span>Municipalities: More than Scheduled LR</span></div>
+                            </th>
+                            <th id="form:searchResults:pspDomComm_mncpNoLesslr">
+                                <div><span>Municipalities: No/Less LR</span></div>
+                            </th>
+                            <th id="form:searchResults:pspDomComm_mandalSchlr">
+                                <div><span>Mandal: Scheduled LR</span></div>
+                            </th>
+                            <th id="form:searchResults:pspDomComm_mandalMorethanSchlr">
+                                <div><span>Mandal: More than Scheduled LR</span></div>
+                            </th>
+                            <th id="form:searchResults:pspDomComm_mandalNoLesslr">
+                                <div><span>Mandal: No/Less LR</span></div>
+                            </th>
+                            <th id="form:searchResults:pspDomComm_villSchlr">
+                                <div><span>Villages: Scheduled LR</span></div>
+                            </th>
+                            <th id="form:searchResults:pspDomComm_villMorethanSchlr">
+                                <div><span>Villages: More than Scheduled LR</span></div>
+                            </th>
+                            <th id="form:searchResults:pspDomComm_villNoLesslr">
+                                <div><span>Villages: No/Less LR</span></div>
+                            </th>
+                            <th id="form:searchResults:actions" class="ui-state-default actions-column">
+                                <div><span>Actions</span></div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tfoot></tfoot>
+                    <tbody id="form:searchResults_data" class="ui-datatable-data ui-widget-content">
+                        <tr data-ri="0">
+                            <td>
+                                <div>11-11-2024</div>
+                            </td>
+                            <td>
+                                <div>KRISHNA</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>2</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>9</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>53</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>1005</div>
+                            </td>
+                            <td class="actions-column">
+                                <div>
+                                    <button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-ri="1">
+                            <td>
+                                <div>11-11-2024</div>
+                            </td>
+                            <td>
+                                <div>GUNTUR</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>2</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>12</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>58</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>812</div>
+                            </td>
+                            <td class="actions-column">
+                                <div><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></div>
+                            </td>
+                        </tr>
+                        <tr data-ri="2">
+                            <td>
+                                <div>11-11-2024</div>
+                            </td>
+                            <td>
+                                <div>PRAKASAM</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>1</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>9</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>46</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>1063</div>
+                            </td>
+                            <td class="actions-column">
+                                <div><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></div>
+                            </td>
+                        </tr>
+                        <tr data-ri="3">
+                            <td>
+                                <div>10-11-2024</div>
+                            </td>
+                            <td>
+                                <div>KRISHNA</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>2</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>9</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>53</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>1005</div>
+                            </td>
+                            <td class="actions-column">
+                                <div><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></div>
+                            </td>
+                        </tr>
+                        <tr data-ri="4">
+                            <td>
+                                <div>10-11-2024</div>
+                            </td>
+                            <td>
+                                <div>GUNTUR</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>2</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>12</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>58</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>812</div>
+                            </td>
+                            <td class="actions-column">
+                                <div><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></div>
+                            </td>
+                        </tr>
+                        <tr data-ri="5">
+                            <td>
+                                <div>10-11-2024</div>
+                            </td>
+                            <td>
+                                <div>PRAKASAM</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>1</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>9</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>46</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>0</div>
+                            </td>
+                            <td>
+                                <div>1063</div>
+                            </td>
+                            <td class="actions-column">
+                                <div><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/lmc.js"></script>
+</body>
+</html>

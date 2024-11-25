@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,19 +15,24 @@
     <!--Font Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
     <!--Font Nunito -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
 
     <!-- Font Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 
 </head>
+
 <body>
 
     <div id="navbar"></div>
@@ -34,180 +40,197 @@
     <div class="container-fluid ">
         <div class="container-fluid font-small mt-4">
             <div class="row top-1 mt-5">
-                <h5 class="col-sm-5 mt-auto">DISCOMs Power Supply Position <span class="font-small">(Daily Report)</span></h5>
+                <h5 class="col-sm-5 mt-auto">DISCOMs Power Supply Position <span class="font-small">(Daily
+                        Report)</span></h5>
                 <div class="col-sm-5">
                     <form class="row row-cols-lg-auto g-3 mb-3 mb-sm-0 align-items-center" id="searchForm">
                         <label class="col-4" for="inlineFormInputGroupUsername">From</label>
                         <div class="col-8">
-                            <input type="date" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+                            <input type="date" class="form-control" id="inlineFormInputGroupUsername"
+                                placeholder="Username">
                         </div>
 
                         <label class="col-4" for="inlineFormInputGroupUsername">To</label>
                         <div class="col-8">
                             <div class="input-group">
-                                <input type="date" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
-                                
+                                <input type="date" class="form-control" id="inlineFormInputGroupUsername"
+                                    placeholder="Username">
+
                             </div>
                         </div>
 
                         <div class="col-sm-12">
-                            <button class="btn btn-secondary small w-100" type="button" title="search">Search &nbsp; <i class="bi bi-search"></i>
+                            <button class="btn btn-secondary small w-100" type="button" title="search">Search &nbsp; <i
+                                    class="bi bi-search"></i>
                             </button>
                         </div>
-                      
+
                         <!-- <div class="col-12">
                           <button type="submit" class="btn btn-secondary"> Search</button>
                         </div> -->
-                      </form>
+                    </form>
                 </div>
                 <div class="col-sm-2">
-                    <button class="btn btn-sm small btn-primary float-end" type="button" id="psPosAddBtn" onclick="psPositionView()"><i class="bi bi-plus-circle"></i> Add New</button>
+                    <button class="btn btn-sm small btn-primary float-end" type="button" id="psPosAddBtn"
+                        onclick="psPositionView()"><i class="bi bi-plus-circle"></i> Add New</button>
                 </div>
             </div>
 
-                
-                <form  class="d-none bg-light p-3 rounded-2 border border-secondary-subtle shadow-sm" id="prevDayPsPositionForm">
-                    
-        
-                    <!-- District Name, Energy Met, Industrial LR, Agricultural LR, Other LR -->
-                    <div class="row g-3">
-                        <div class="col-sm-3">
-                            <label for="entryDate" class="form-label">Power Position Date *</label>
-                            <input type="text" id="entryDate" name="entryDate" class="form-control" placeholder="Select Date">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="distName" class="form-label">District Name *</label>
-                            <input type="text" id="distName" name="distName" class="form-control" placeholder="Enter District Name">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="energyMet" class="form-label">Energy Met *</label>
-                            <input type="text" id="energyMet" name="energyMet" class="form-control" maxlength="99999" size="10">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="industrialLr" class="form-label">Industrial LR</label>
-                            <input type="text" id="industrialLr" name="industrialLr" class="form-control" maxlength="99999" size="10">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="agriculturalLr" class="form-label">Net Agricultural LR</label>
-                            <input type="text" id="agriculturalLr" name="agriculturalLr" class="form-control" maxlength="99999" size="10">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="flex1" class="form-label">Other LR</label>
-                            <input type="text" id="flex1" name="flex1" class="form-control" maxlength="99999" size="10">
-                        </div>
-                    
-                        <div class="col-md-3">
-                            <label for="ghmc" class="form-label">GMC</label>
-                            <input type="text" id="ghmc" name="ghmc" class="form-control" maxlength="99999" size="10">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="corporations" class="form-label">Corporations</label>
-                            <input type="text" id="corporations" name="corporations" class="form-control" maxlength="99999" size="10">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="dhq" class="form-label">DHQ</label>
-                            <input type="text" id="dhq" name="dhq" class="form-control" maxlength="99999" size="10">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="mncplTowns" class="form-label">Municipalities / Towns</label>
-                            <input type="text" id="mncplTowns" name="mncplTowns" class="form-control" maxlength="99999" size="10">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="mhq" class="form-label">MHQ</label>
-                            <input type="text" id="mhq" name="mhq" class="form-control" maxlength="99999" size="10">
-                        </div>
-                    
-                        <div class="col-md-3">
-                            <label for="peakMetMw" class="form-label">Peak Met MW *</label>
-                            <input type="text" id="peakMetMw" name="peakMetMw" class="form-control" maxlength="99999" size="10">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="peakMetTime" class="form-label">Peak Met Time *</label>
-                            <input type="text" id="peakMetTime" name="peakMetTime" class="form-control" placeholder="Select Time">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="demandDeficit" class="form-label">Demand Deficit *</label>
-                            <input type="text" id="demandDeficit" name="demandDeficit" class="form-control" maxlength="99999" size="10">
-                        </div>
-                        <div class="col-md-3">
-                            <label for="weatherCode" class="form-label">Weather *</label>
-                            <select id="weatherCode" name="weatherCode" class="form-select">
-                                <option value="">Select Weather</option>
-                                <option value="W2">Rain</option>
-                                <option value="W3">Light Rain</option>
-                                <option value="W5">Heavy Gale & Wind</option>
-                                <option value="W1">Drizzling</option>
-                                <option value="W6">Heavy Gale & Rain</option>
-                                <option value="W4">Cloudy</option>
-                                <option value="W7">Clear</option>
-                            </select>
-                        </div>
-                        <div class="col-md-3 d-flex">
-                            <button class="btn btn-primary align-self-end ms-auto w-50" type="button" onclick="prevDayPsPosition()"><i class="bi bi-floppy"></i> Save</button>
-                        </div>
+
+            <form class="d-none bg-light p-3 rounded-2 border border-secondary-subtle shadow-sm"
+                id="prevDayPsPositionForm">
+
+
+                <!-- District Name, Energy Met, Industrial LR, Agricultural LR, Other LR -->
+                <div class="row g-3">
+                    <div class="col-sm-3">
+                        <label for="entryDate" class="form-label">Power Position Date *</label>
+                        <input type="text" id="entryDate" name="entryDate" class="form-control"
+                            placeholder="Select Date">
                     </div>
-        
-                    <!-- Note -->
-                    <div class="mt-4">
-                        <p class="text-muted">Note: Deficit field value should be entered with '-' sign.</p>
+                    <div class="col-md-3">
+                        <label for="distName" class="form-label">District Name *</label>
+                        <input type="text" id="distName" name="distName" class="form-control"
+                            placeholder="Enter District Name">
                     </div>
-                </form>
-            
+                    <div class="col-md-3">
+                        <label for="energyMet" class="form-label">Energy Met *</label>
+                        <input type="text" id="energyMet" name="energyMet" class="form-control" maxlength="99999"
+                            size="10">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="industrialLr" class="form-label">Industrial LR</label>
+                        <input type="text" id="industrialLr" name="industrialLr" class="form-control" maxlength="99999"
+                            size="10">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="agriculturalLr" class="form-label">Net Agricultural LR</label>
+                        <input type="text" id="agriculturalLr" name="agriculturalLr" class="form-control"
+                            maxlength="99999" size="10">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="flex1" class="form-label">Other LR</label>
+                        <input type="text" id="flex1" name="flex1" class="form-control" maxlength="99999" size="10">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="ghmc" class="form-label">GMC</label>
+                        <input type="text" id="ghmc" name="ghmc" class="form-control" maxlength="99999" size="10">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="corporations" class="form-label">Corporations</label>
+                        <input type="text" id="corporations" name="corporations" class="form-control" maxlength="99999"
+                            size="10">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="dhq" class="form-label">DHQ</label>
+                        <input type="text" id="dhq" name="dhq" class="form-control" maxlength="99999" size="10">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="mncplTowns" class="form-label">Municipalities / Towns</label>
+                        <input type="text" id="mncplTowns" name="mncplTowns" class="form-control" maxlength="99999"
+                            size="10">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="mhq" class="form-label">MHQ</label>
+                        <input type="text" id="mhq" name="mhq" class="form-control" maxlength="99999" size="10">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="peakMetMw" class="form-label">Peak Met MW *</label>
+                        <input type="text" id="peakMetMw" name="peakMetMw" class="form-control" maxlength="99999"
+                            size="10">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="peakMetTime" class="form-label">Peak Met Time *</label>
+                        <input type="text" id="peakMetTime" name="peakMetTime" class="form-control"
+                            placeholder="Select Time">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="demandDeficit" class="form-label">Demand Deficit *</label>
+                        <input type="text" id="demandDeficit" name="demandDeficit" class="form-control"
+                            maxlength="99999" size="10">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="weatherCode" class="form-label">Weather *</label>
+                        <select id="weatherCode" name="weatherCode" class="form-select">
+                            <option value="">Select Weather</option>
+                            <option value="W2">Rain</option>
+                            <option value="W3">Light Rain</option>
+                            <option value="W5">Heavy Gale & Wind</option>
+                            <option value="W1">Drizzling</option>
+                            <option value="W6">Heavy Gale & Rain</option>
+                            <option value="W4">Cloudy</option>
+                            <option value="W7">Clear</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 d-flex">
+                        <button class="btn btn-primary align-self-end ms-auto w-50" type="button"
+                            onclick="prevDayPsPosition()"><i class="bi bi-floppy"></i> Save</button>
+                    </div>
+                </div>
+
+                <!-- Note -->
+                <div class="mt-4">
+                    <p class="text-muted">Note: Deficit field value should be entered with '-' sign.</p>
+                </div>
+            </form>
+
         </div>
-        
+
         <div class="row" id="prevDayPsPositionTable">
             <div class="col-sm-12">
                 <div class="table-responsive mt-4">
                     <table class="table table-sm" role="grid">
                         <thead>
                             <tr role="row">
-                                <th id="form:searchResults:format2_entryDate" class="ui-state-default" role="columnheader">
+                                <th id="form:searchResults:format2_entryDate">
                                     <div class="ui-dt-c"><span>Power Position Date</span></div>
                                 </th>
-                                <th id="form:searchResults:format2_distName" class="ui-state-default" role="columnheader"
-                                    >
+                                <th id="form:searchResults:format2_distName">
                                     <div class="ui-dt-c"><span>District Name</span></div>
                                 </th>
-                                <th id="form:searchResults:format2_energyMet" class="ui-state-default" role="columnheader">
+                                <th id="form:searchResults:format2_energyMet">
                                     <div class="ui-dt-c"><span>Energy Met</span></div>
                                 </th>
-                                <th id="form:searchResults:format2_industrialLr" class="ui-state-default" role="columnheader">
+                                <th id="form:searchResults:format2_industrialLr">
                                     <div class="ui-dt-c"><span>Industrial LR</span></div>
                                 </th>
-                                <th id="form:searchResults:format2_agriculturalLr" class="ui-state-default" role="columnheader">
+                                <th id="form:searchResults:format2_agriculturalLr">
                                     <div class="ui-dt-c"><span>Net Agricultural LR</span></div>
                                 </th>
-                                <th id="form:searchResults:format2_flex1" class="ui-state-default" role="columnheader">
+                                <th id="form:searchResults:format2_flex1">
                                     <div class="ui-dt-c"><span>Other LR</span></div>
                                 </th>
-                                <th id="form:searchResults:format2_ghmc" class="ui-state-default" role="columnheader">
+                                <th id="form:searchResults:format2_ghmc">
                                     <div class="ui-dt-c"><span>GMC</span></div>
                                 </th>
-                                <th id="form:searchResults:format2_corporations" class="ui-state-default" role="columnheader">
+                                <th id="form:searchResults:format2_corporations">
                                     <div class="ui-dt-c"><span>Corporations</span></div>
                                 </th>
-                                <th id="form:searchResults:format2_dhq" class="ui-state-default" role="columnheader">
+                                <th id="form:searchResults:format2_dhq">
                                     <div class="ui-dt-c"><span>DHQ</span></div>
                                 </th>
-                                <th id="form:searchResults:format2_mncplTowns" class="ui-state-default" role="columnheader">
+                                <th id="form:searchResults:format2_mncplTowns">
                                     <div class="ui-dt-c"><span>Municipalities / Towns</span></div>
                                 </th>
-                                <th id="form:searchResults:format2_mhq" class="ui-state-default" role="columnheader">
+                                <th id="form:searchResults:format2_mhq">
                                     <div class="ui-dt-c"><span>MHQ</span></div>
                                 </th>
-                                <th id="form:searchResults:format2_dmdUnrstd" class="ui-state-default" role="columnheader">
+                                <th id="form:searchResults:format2_dmdUnrstd">
                                     <div class="ui-dt-c"><span>Demand Unrestricted</span></div>
                                 </th>
-                                <th id="form:searchResults:format2_peakMetMw" class="ui-state-default" role="columnheader">
+                                <th id="form:searchResults:format2_peakMetMw">
                                     <div class="ui-dt-c"><span>Peak Met MW</span></div>
                                 </th>
-                                <th id="form:searchResults:format2_peakMetTime" class="ui-state-default" role="columnheader">
+                                <th id="form:searchResults:format2_peakMetTime">
                                     <div class="ui-dt-c"><span>Peak Met Time</span></div>
                                 </th>
-                                <th id="form:searchResults:format2_demandDeficit" class="ui-state-default" role="columnheader">
+                                <th id="form:searchResults:format2_demandDeficit">
                                     <div class="ui-dt-c"><span>Demand Deficit</span></div>
                                 </th>
-                                <th id="form:searchResults:actions" class="ui-state-default actions-column" role="columnheader">
+                                <th id="form:searchResults:actions" class="ui-state-default actions-column"
+                                    role="columnheader">
                                     <div class="ui-dt-c"><span>Actions</span></div>
                                 </th>
                             </tr>
@@ -218,7 +241,7 @@
                                 <td role="gridcell">
                                     <div class="ui-dt-c">10-11-2024</div>
                                 </td>
-                                <td role="gridcell" >
+                                <td role="gridcell">
                                     <div class="ui-dt-c">KRISHNA</div>
                                 </td>
                                 <td role="gridcell">
@@ -260,13 +283,14 @@
                                 <td role="gridcell">
                                     <div class="ui-dt-c">0.000</div>
                                 </td>
-                                <td><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></td>
+                                <td><button class="bg-transparent border-0" type="button" title="edit"><i
+                                            class="bi bi-pencil-fill"></i></button></td>
                             </tr>
                             <tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row">
                                 <td role="gridcell">
                                     <div class="ui-dt-c">10-11-2024</div>
                                 </td>
-                                <td role="gridcell" >
+                                <td role="gridcell">
                                     <div class="ui-dt-c">GUNTUR</div>
                                 </td>
                                 <td role="gridcell">
@@ -308,13 +332,14 @@
                                 <td role="gridcell">
                                     <div class="ui-dt-c">0.000</div>
                                 </td>
-                                <td><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></td>
+                                <td><button class="bg-transparent border-0" type="button" title="edit"><i
+                                            class="bi bi-pencil-fill"></i></button></td>
                             </tr>
                             <tr data-ri="2" class="ui-widget-content ui-datatable-even" role="row">
                                 <td role="gridcell">
                                     <div class="ui-dt-c">10-11-2024</div>
                                 </td>
-                                <td role="gridcell" >
+                                <td role="gridcell">
                                     <div class="ui-dt-c">PRAKASAM</div>
                                 </td>
                                 <td role="gridcell">
@@ -356,13 +381,14 @@
                                 <td role="gridcell">
                                     <div class="ui-dt-c">0.000</div>
                                 </td>
-                                <td><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></td>
+                                <td><button class="bg-transparent border-0" type="button" title="edit"><i
+                                            class="bi bi-pencil-fill"></i></button></td>
                             </tr>
                             <tr data-ri="3" class="ui-widget-content ui-datatable-odd" role="row">
                                 <td role="gridcell">
                                     <div class="ui-dt-c">08-11-2024</div>
                                 </td>
-                                <td role="gridcell" >
+                                <td role="gridcell">
                                     <div class="ui-dt-c">KRISHNA</div>
                                 </td>
                                 <td role="gridcell">
@@ -404,13 +430,14 @@
                                 <td role="gridcell">
                                     <div class="ui-dt-c">0.000</div>
                                 </td>
-                                <td><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></td>
+                                <td><button class="bg-transparent border-0" type="button" title="edit"><i
+                                            class="bi bi-pencil-fill"></i></button></td>
                             </tr>
                             <tr data-ri="4" class="ui-widget-content ui-datatable-even" role="row">
                                 <td role="gridcell">
                                     <div class="ui-dt-c">08-11-2024</div>
                                 </td>
-                                <td role="gridcell" >
+                                <td role="gridcell">
                                     <div class="ui-dt-c">GUNTUR</div>
                                 </td>
                                 <td role="gridcell">
@@ -452,13 +479,14 @@
                                 <td role="gridcell">
                                     <div class="ui-dt-c">0.000</div>
                                 </td>
-                                <td><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></td>
+                                <td><button class="bg-transparent border-0" type="button" title="edit"><i
+                                            class="bi bi-pencil-fill"></i></button></td>
                             </tr>
                             <tr data-ri="5" class="ui-widget-content ui-datatable-odd" role="row">
                                 <td role="gridcell">
                                     <div class="ui-dt-c">08-11-2024</div>
                                 </td>
-                                <td role="gridcell" >
+                                <td role="gridcell">
                                     <div class="ui-dt-c">PRAKASAM</div>
                                 </td>
                                 <td role="gridcell">
@@ -500,7 +528,8 @@
                                 <td role="gridcell">
                                     <div class="ui-dt-c">0.000</div>
                                 </td>
-                                <td><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></td>
+                                <td><button class="bg-transparent border-0" type="button" title="edit"><i
+                                            class="bi bi-pencil-fill"></i></button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -511,5 +540,7 @@
 
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/lmc.js"></script>
+    
 </body>
+
 </html>
