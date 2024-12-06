@@ -31,6 +31,18 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
+        <style>
+            /* td {
+             transition: height 0.5s ease, max-width 0.3s ease;
+            } */
+
+            .reason-cell {
+                max-width: 100px;
+                cursor: pointer;
+            }
+
+        </style>
+
 </head>
 
 <body>
@@ -74,7 +86,70 @@
             </div>
 
 
-            <form class="d-none bg-light p-3 rounded-2 border border-secondary-subtle shadow-sm generation-form"
+            <form class="d-none bg-light p-3 rounded-2 border border-secondary-subtle shadow-sm"
+                id="prevDayPsPositionForm">
+
+                <div class="row mb-3">
+                    <label for="date" class="col-form-label col-sm-1">Date</label>
+                    <div class="col-sm-2">
+                        <input type="date" class="form-control" id="date" />
+                    </div>
+
+                    <label for="plant" class="col-form-label col-sm-1">Plant</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="plant" />
+                    </div>                   
+                </div> 
+
+                <div class="row mb-3 d-flex">
+                    <label for="plant" class="col-form-label col-sm-1">Actual (MU)</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="plant" />
+                    </div>
+                    <div class="col-sm-2 align-self-center">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox" value="option">
+                            <label class="form-check-label" for="inlineCheckbox">Poor Coal Quality</label>
+                        </div>
+                    </div>
+                
+                    <div class="col-sm-6 align-self-center">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox2">Forced Outage</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option2">
+                            <label class="form-check-label" for="inlineCheckbox3">Planned Outage</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option3">
+                            <label class="form-check-label" for="inlineCheckbox4">Revised Outage</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option4">
+                            <label class="form-check-label" for="inlineCheckbox5">Backing down</label>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label for="reason" class="form-label">Reason</label>
+                        <textarea name="reason" id="reason" class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-11"></div>
+                    <div class="col-md-1">
+                        <button type="submit" class="btn btn-primary float-end w-100"><i class="bi bi-floppy"></i> Save</button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- <form class="d-none bg-light p-3 rounded-2 border border-secondary-subtle shadow-sm generation-form"
                 id="prevDayPsPositionForm">
 
 
@@ -204,7 +279,9 @@
                         <button type="submit" class="btn btn-primary float-end w-100">Save</button>
                     </div>
                 </div>
-            </form>
+            </form> -->
+
+
         </div>
 
        
@@ -215,6 +292,8 @@
     <div class="row mt-3" id="prevDayPsPositionTable">
         <div class="col-sm-12">
             <div class="table-responsive mx-3">
+                
+
                 <table class="table table-sm">
                     <thead>
                         <tr role="row">
@@ -289,7 +368,7 @@
                     <tbody id="form:searchResults_data" class="ui-datatable-data ui-widget-content">
                         <tr data-ri="0" class="ui-widget-content ui-datatable-even" role="row">
                             <td role="gridcell">
-                                <div class="ui-dt-c">10-11-2024</div>
+                                <div class="ui-dt-c text-nowrap">10-11-2024</div>
                             </td>
                             <td role="gridcell">
                                 <div class="ui-dt-c">45.538</div>
@@ -307,21 +386,36 @@
                                 <div class="ui-dt-c">21.102</div>
                             </td>
                             <td role="gridcell">
-                                <div class="ui-dt-c">Unit-1: H/T due to BTL</div>
+                                <div class="text-truncate reason-cell" onclick="toggleExpand(this)">Unit-1: H/T due to BTL</div>
                             </td>
                             <td role="gridcell">
                                 <div class="ui-dt-c">7.223</div>
                             </td>
                             <td role="gridcell">
-                                <div class="ui-dt-c">Machkhund Unit-2, Unit-5: LC taken for RLA study, LSL Unit-2: T/d
-                                    on GT
-                                    Differential Relay &amp; Bucholtz Relay</div>
+
+                                <button class="bg-transparent border-0 text-truncate reason-cell" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                    Machkhund Unit-2, Unit-5: LC taken for RLA study, LSL Unit-2: T/d on GT Differential Relay &amp; Bucholtz Relay
+                                  </button>
+
+                                  <div class="collapse reason-cell" id="collapseExample">
+                                    <div class="card card-body">
+                                      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                    </div>
+                                  </div>
+
+                                <!-- <div class="text-truncate reason-cell" onclick="toggleExpand(this)"></div>
+
+                                    <div class="">Machkhund Unit-2, Unit-5: LC taken for RLA study, LSL Unit-2: T/d
+                                        on GT
+                                        Differential Relay &amp; Bucholtz Relay</div> -->
+
+
                             </td>
                             <td role="gridcell">
                                 <div class="ui-dt-c">31.483</div>
                             </td>
                             <td role="gridcell">
-                                <div class="ui-dt-c">MAPS Unit-1, Neyveli TS II Expn Unit-1, Neyveli TS-I Expn Unit-2,
+                                <div class="text-truncate reason-cell" onclick="toggleExpand(this)">MAPS Unit-1, Neyveli TS II Expn Unit-1, Neyveli TS-I Expn Unit-2,
                                     NEYVELI TS II Unit-4: LC, Neyveli TS-II Unit-2, Simhadri Stg I Unit-2: T/d,
                                     Ramagundam
                                     Unit-7: LC, NTPL Unit-2 : T/d</div>
@@ -336,8 +430,16 @@
                                 <div class="ui-dt-c">24.838</div>
                             </td>
                             <td role="gridcell">
-                                <div class="ui-dt-c">Actual NCEs 26.667 but By subtracting Sales(-1.829) it was shown as
-                                    72.503</div>
+                                <button class="bg-transparent border-0 text-truncate reason-cell" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+                                    Machkhund Unit-2, Unit-5: LC taken for RLA study, LSL Unit-2: T/d on GT Differential Relay &amp; Bucholtz Relay
+                                  </button>
+
+                                  <div class="collapse reason-cell" id="collapseExample1">
+                                    <div class="card card-body">
+                                      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                                    </div>
+                                  </div>
                             </td>
                             <td role="gridcell">
                                 <div class="ui-dt-c">57.824</div>
@@ -360,87 +462,36 @@
                                     </a></div>
                             </td>
                         </tr>
-                        <tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row">
-                            <td role="gridcell">
-                                <div class="ui-dt-c">09-11-2024</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">39.998</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">-</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">23.045</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">-</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">12.802</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">"Unit-1: H/T due to BTL, Unit-3: H/T due to BTL."</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">15.068</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">Machkhund Unit-2, Unit-5: LC taken for RLA study, LSL Unit-2: T/d
-                                    on GT
-                                    Differential Relay &amp; Bucholtz Relay</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">31.662</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">MAPS Unit-1, Neyveli TS II Expn Unit-1, Neyveli TS-I Expn Unit-2,
-                                    NEYVELI TS II Unit-4: LC, Neyveli TS-II Unit-2, Simhadri Stg I Unit-2: T/d,
-                                    Ramagundam
-                                    Unit-7: LC, NTPL Unit-2 : T/d</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">0.000</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">No Gas availability</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">27.825</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">-</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">67.109</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">-</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">-0.077</div>
-                            </td>
-                            <td role="gridcell">
-                                <div class="ui-dt-c">-</div>
-                            </td>
-                            <td role="gridcell" class="actions-column">
-                                <div class="ui-dt-c"><a id="form:searchResults:1:j_idt110" href="#"
-                                        class="ui-commandlink ui-button"
-                                        onclick="PrimeFaces.addSubmitParam('form',{'form:searchResults:1:j_idt110':'form:searchResults:1:j_idt110'}).submit('form');"
-                                        title="Edit SLDC/aplmcuser">
-                                        <div class="ui-button ui-icon iconEdit"></div>
-                                    </a></div>
-                            </td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    
     </div>
 
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/lmc.js"></script>
+
+    <script>
+
+        function toggleExpand(td) {
+
+        // Toggle a class to expand or truncate text
+        td.classList.toggle('text-truncate');
+        
+            // Dynamically adjust height if needed
+            if (td.classList.contains('text-truncate')) {
+                td.style.height = '';
+            } else {
+                td.style.height = 'auto';
+            }
+        }
+
+    </script>
+
+   
 </body>
 
 </html>

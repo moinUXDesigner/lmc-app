@@ -172,12 +172,16 @@
                     <div class="col-sm-8">
                         <form action="#" class="row mx-1 font-small border border-success p-2 rounded d-none" id="empUserDetails">
                             <label for="name" class="col-sm-1 col-form-label">Name</label>
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <input type="text" class="form-control" id="name" value="Suresh Kumar" disabled>
                             </div>
                             <label for="desig" class="col-sm-1 col-form-label">Designation</label>
-                            <div class="col-sm-4 mb-3 mb-sm-0">
+                            <div class="col-sm-2 mb-3 mb-sm-0">
                                 <input type="text" class="form-control" id="desig" value="ADE" disabled>
+                            </div>
+                            <label for="role" class="col-sm-1 col-form-label">Role</label>
+                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                <input type="text" class="form-control" id="role">
                             </div>
                             <div class="col-md-2 d-flex">
                                 <button class="btn btn-sm btn-primary w-100 ms-auto align-self-end" type="button" onclick="addEmpUser()"><i class="bi bi-plus-circle"></i> Add</button>
@@ -193,14 +197,18 @@
                                     <tr>
                                         <th>S No</th>
                                         <th>Name</th>
+                                        <th>ID No</th>
                                         <th>Designation</th>
+                                        <th>Mobile Number</th>
+                                        <th>Role</th>
+                                        <th>Last Login</th>
                                         <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td></td><td></td>
+                                        <td></td><td></td><td></td><td></td><td></td><td></td>
                                         <td><button class="bg-transparent border-0" type="button" title="delete"><i class="bi bi-trash-fill"></i></button></td>
                                     </tr>
                                 </tbody>
@@ -281,3 +289,12 @@
 
 </body>
 </html>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            
+        </div>
+    </div>
+</div>

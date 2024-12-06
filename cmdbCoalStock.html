@@ -69,44 +69,64 @@
                     <!-- Entry Date -->
                     <div class="row mb-3">
                         <label for="entryDate" class="col-sm-2 col-form-label">Entry Date *</label>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <input type="date" class="form-control" id="entryDate" name="entryDate" placeholder="Select Date">
                         </div>
                     
                         <label for="powerStation" class="col-sm-2 col-form-label">PowerStation Name *</label>
-                        <div class="col-sm-4">
+                        <div class="col-sm-5">
                             <input type="text" class="form-control" id="powerStation" name="powerStation" placeholder="Enter PowerStation Name">
                         </div>
                     </div>
         
                     <!-- Receipts and Consumption -->
-                    <div class="row mb-3">
-                        <label for="receipts" class="col-sm-2 col-form-label">Receipts (MT) *</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="receipts" name="receipts" placeholder="Enter Receipts">
-                        </div>
-                        <label for="consumption" class="col-sm-2 col-form-label">Consumption (MT) *</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="consumption" name="consumption" placeholder="Enter Consumption">
+                    <div class="row mb-3 d-flex">
+                        <h6 class="col-sm-2 align-slef-end">Plant Stock</h6>
+                        <div class="col-sm-10">
+                            <div class="row">
+                                <label for="ob" class="col-sm-2 col-form-label">Opening Balance*</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="ob" name="ob" placeholder="Enter Receipts">
+                                </div>
+                                <label for="receipts" class="col-sm-2 col-form-label">Receipts (MT) *</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="receipts" name="receipts" placeholder="Enter Receipts">
+                                </div>
+                                <label for="consumption" class="col-sm-2 col-form-label">Consumption (MT) *</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="consumption" name="consumption"
+                                        placeholder="Enter Consumption">
+                                </div>
+                            </div>
                         </div>
                     </div>
         
                     <!-- Present Stock: At Port and In Transit -->
-                    <div class="row mb-3">
-                        <label for="atPort" class="col-sm-2 col-form-label">Present Stock: At Port *</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="atPort" name="atPort" placeholder="Enter Stock at Port">
-                        </div>
-                        <label for="inTransit" class="col-sm-2 col-form-label">Present Stock: In Transit *</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="inTransit" name="inTransit" placeholder="Enter Stock In Transit">
+                    <div class="row mb-3 d-flex">
+                        <h6 class="col-sm-2 mb-0">Transit</h6>
+                        <div class="col-sm-10">
+                            <div class="row">
+                                <label for="ob" class="col-sm-2 col-form-label">Opening Balance*</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="ob" name="ob" placeholder="Enter Receipts">
+                                </div>
+                                <label for="atPort" class="col-sm-2 col-form-label">Present Stock: At Port *</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="atPort" name="atPort" placeholder="Enter Stock at Port">
+                                </div>
+                                <label for="inTransit" class="col-sm-2 col-form-label">Present Stock: In Transit *</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="inTransit" name="inTransit"
+                                        placeholder="Enter Stock In Transit">
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-sm-11"></div>
                         <div class="col-md-1">
-                          <button type="submit" class="btn btn-primary float-end w-100">Save</button>
+                          <button type="submit" class="btn btn-primary float-end w-100"><i class="bi bi-floppy"></i> Save</button>
                         </div>
                       </div>
                     </div>
@@ -120,31 +140,55 @@
         <div class="row mt-3" id="prevDayPsPositionTable">
             <div class="col-sm-12">
                 <div class="table-responsive mx-3">
-                    <table class="table table-sm" role="grid">
+                    <table class="table table-sm table-bordered">
                         <thead>
-                            <tr role="row">
-                                <th id="form:searchResults:coalStock_entryDate">
-                                    <div><span>Entry Date</span></div>
+                            <tr>
+                                <th rowspan="2">
+                                    Entry Date
                                 </th>
-                                <th id="form:searchResults:coalStock_powerStation"
+                                <th rowspan="2"
                                    >
-                                    <div><span>PowerStation Name</span></div>
+                                    PowerStation Name
                                 </th>
-                                <th id="form:searchResults:powerStation_receipts">
-                                    <div><span>Receipts (MT)</span></div>
+                                <th colspan="4" class="text-center">
+                                    Plant Stock
                                 </th>
-                                <th id="form:searchResults:powerStation_consumption">
-                                    <div><span>Consumption (MT)</span></div>
+
+                                <th colspan="4" class="text-center">
+                                    Transit
                                 </th>
-                                <th id="form:searchResults:powerStation_atPort">
-                                    <div><span>Present Stock: At Port</span></div>
+
+                                <th rowspan="2">
+                                    Actions
                                 </th>
-                                <th id="form:searchResults:powerStation_inTransit">
-                                    <div><span>Present Stock: In Transit</span></div>
+                            </tr>
+                            <tr class="text-center">
+                                <th>
+                                    Opening Balance
                                 </th>
-                                <th id="form:searchResults:actions" class="ui-state-default actions-column" role="columnheader">
-                                    <div><span>Actions</span></div>
+                                <th>
+                                    Receipts (MT)
                                 </th>
+                                <th>
+                                    Consumption (MT)
+                                </th>
+                                <th>
+                                    Closing Balance
+                                </th>
+                                <th>
+                                    Opening Balance
+                                </th>
+                                <th>
+                                    Receipts (MT)
+                                </th>
+                                <th>
+                                    Consumption (MT)
+                                </th>
+                                <th>
+                                    Closing Balance
+                                </th>
+
+                                
                             </tr>
                         </thead>
                         <tfoot></tfoot>
@@ -168,8 +212,23 @@
                                 <td>
                                     <div>87500</div>
                                 </td>
+
+                                <td>
+                                    <div>37408</div>
+                                </td>
+                                <td>
+                                    <div>38252</div>
+                                </td>
+                                <td>
+                                    <div>0</div>
+                                </td>
+                                <td>
+                                    <div>87500</div>
+                                </td>
+
+
                                 <td class="actions-column">
-                                    <div><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></div>
+                                    <div class="text-center"><button class="bg-transparent border-0 " type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></div>
                                 </td>
                             </tr>
                             <tr data-ri="1" class="ui-widget-content ui-datatable-odd" role="row">
@@ -191,102 +250,23 @@
                                 <td>
                                     <div>38500</div>
                                 </td>
-                                <td class="actions-column">
-                                    <div><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></div>
-                                </td>
-                            </tr>
-                            <tr data-ri="2">
                                 <td>
-                                    <div>10-11-2024</div>
+                                    <div>26803</div>
                                 </td>
                                 <td>
-                                    <div>SDSTPS</div>
-                                </td>
-                                <td>
-                                    <div>12032</div>
-                                </td>
-                                <td>
-                                    <div>13151</div>
-                                </td>
-                                <td>
-                                    <div>86781</div>
-                                </td>
-                                <td>
-                                    <div>25696</div>
-                                </td>
-                                <td class="actions-column">
-                                    <div><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></div>
-                                </td>
-                            </tr>
-                            <tr data-ri="3" class="ui-widget-content ui-datatable-odd" role="row">
-                                <td>
-                                    <div>09-11-2024</div>
-                                </td>
-                                <td>
-                                    <div>DR NTTPS</div>
-                                </td>
-                                <td>
-                                    <div>36553</div>
-                                </td>
-                                <td>
-                                    <div>35431</div>
+                                    <div>25726</div>
                                 </td>
                                 <td>
                                     <div>0</div>
                                 </td>
                                 <td>
-                                    <div>98000</div>
+                                    <div>38500</div>
                                 </td>
                                 <td class="actions-column">
-                                    <div><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></div>
+                                    <div class="text-center"><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></div>
                                 </td>
                             </tr>
-                            <tr data-ri="4">
-                                <td>
-                                    <div>09-11-2024</div>
-                                </td>
-                                <td>
-                                    <div>RTPP</div>
-                                </td>
-                                <td>
-                                    <div>21918</div>
-                                </td>
-                                <td>
-                                    <div>21606</div>
-                                </td>
-                                <td>
-                                    <div>0</div>
-                                </td>
-                                <td>
-                                    <div>35000</div>
-                                </td>
-                                <td class="actions-column">
-                                    <div><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></div>
-                                </td>
-                            </tr>
-                            <tr data-ri="5" class="ui-widget-content ui-datatable-odd" role="row">
-                                <td>
-                                    <div>09-11-2024</div>
-                                </td>
-                                <td>
-                                    <div>SDSTPS</div>
-                                </td>
-                                <td>
-                                    <div>15540</div>
-                                </td>
-                                <td>
-                                    <div>7988</div>
-                                </td>
-                                <td>
-                                    <div>72165</div>
-                                </td>
-                                <td>
-                                    <div>42692</div>
-                                </td>
-                                <td class="actions-column">
-                                    <div><button class="bg-transparent border-0" type="button" title="edit"><i class="bi bi-pencil-fill"></i></button></div>
-                                </td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>
